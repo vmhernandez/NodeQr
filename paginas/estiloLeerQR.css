@@ -1,0 +1,23 @@
+.consultaqr{
+    text-align: center;
+    margin: 20px auto;
+}
+
+    #qr-canvas{
+        display:none;
+    }
+
+    #outdiv{
+        padding-top: 20px;
+    }
+
+    #v{
+        width: 60%;
+        border: 5px solid #2e6da4;
+    }
+
+@media only screen and (max-width: 970px) {
+    #v{
+        width:100%;
+    }
+}
