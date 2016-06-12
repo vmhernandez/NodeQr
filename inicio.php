@@ -22,8 +22,6 @@
       
       <li class="<?php echo $pagina == 'login_administrador' ? 'active' : ''; ?>"><a href="?p=login_administrador">Administrador</a>
       </li>
-      <li class=""><a href="?p=login_administrador">HOlimin</a>
-      </li>
       
    </ul> 
 
