@@ -22,12 +22,19 @@
 
       <li class="<?php echo $pagina == 'login_administrador' ? 'active' : ''; ?>"><a href="?p=login_administrador">Administrador</a>
       </li>
+<<<<<<< HEAD
 
    </ul>
 
   <p>
     hola mundo
   </p>
+=======
+      <li class=""><a href="?p=login_administrador">HOlimin</a>
+      </li>
+      
+   </ul> 
+>>>>>>> origin/master
 
 <script>
 $(document).ready(function() {
