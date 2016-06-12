@@ -1,12 +1,10 @@
 <?php
-  require_once 'header.php';
-  include "paginas/funciones.php";
+  include "funciones.php"
 ?>
   <!DOCTYPE html>
   <html>
 
   <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="estiloLeerQR.css">
     <script type="text/javascript" src="./llqrcode.js"></script>
     <script src="jquery-1.12.3.js"></script>
@@ -14,7 +12,12 @@
 
   <body>
     <div class="contenedor">
-          <h2>Muebles asociados</h2>
+      <header>
+        <img class="logo" src="masisa.png">
+      </header>
+      <div class="principal2">
+        <div class="madera">
+          <h2>Muebles</h2>
           <?php
           if(isset($_POST['consulta'])){
           $rut_mueblista=$_POST['rut_mueblista'];
@@ -24,7 +27,8 @@
           }
           }
           ?>
-    
+        </div>
+      </div>
     </div>
   </body>
 

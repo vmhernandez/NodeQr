@@ -1,18 +1,24 @@
 <?php
-    include "paginas/funciones.php";
-    require_once 'header.php';
+  include "funciones.php"
 ?>
-       
-    <div class="container col-md-12">
-           
-        <div class="madera col-md-6 col-sm-6 espacio">
-         <div class="panel panel-default principal">
-            <div class="panel-heading"><h2>Madera</h2></div>
-            <div class="fondo2">
-                <img src="img/logo.png" class="center-block img-circle">
-            </div>
-        <form method="post" action="maderas.php">
-        <?php
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="estiloLeerQR.css">
+    <script type="text/javascript" src="./llqrcode.js"></script>
+    <script src="jquery-1.12.3.js"></script>
+  </head>
+
+  <body>
+    <div class="contenedor">
+      <header>
+        <img class="logo" src="masisa.png">
+      </header>
+      <div class="principal2">
+        <div class="madera">
+          <h2>Madera</h2>
+          <?php
             if(isset($_POST['consulta'])){
             $id_sticker=$_POST['txtCodigo'];
         
@@ -21,18 +27,11 @@
                     $resultado = listar_madera_sticker($id_sticker);
                 }
             }
-       ?>
-       <input class="btn btn-primary btn-lg btn-block" type="submit" value="Ver mas" name="consulta">
+        ?>
         </div>
-          </div>
-            </form>
-         <div class="mueblista col-md-6 col-sm-6 espacio">       
-            <div class="panel panel-default principal">
-            <div class="panel-heading"><h2>Mueblista</h2></div>
-            <div class="fondo">
-                <img src="img/men.jpg" class="center-block img-circle">
-            </div>
-           <form class="consultaqr" style="margin-top: 0px; margin-bottom: 0px;" method="post" action="muebles_mueblista.php">
+        <form class="consultaqr" method="post" action="muebles_mueblista.php">
+          <div class="mueblista">
+            <h2>Mueblista</h2>
             <?php
             if(isset($_POST['consulta'])){
             $id_sticker=$_POST['txtCodigo'];
@@ -43,14 +42,13 @@
                 }
             }
             ?>
-            <input class="btn btn-primary btn-lg btn-block" type="submit" value="Muebles asociados" name="consulta">
-            </form>
           </div>
-          <div>    
-  </div>
-</div>
+          <div>
+            <input type="submit" value="Consultar" name="consulta">
+        </form>
+        </div>
+      </div>
+    </div>
+  </body>
 
-            
-            
-   
-            
+  </html>

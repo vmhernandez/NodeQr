@@ -43,7 +43,7 @@ session_start();
                 $_SESSION['correo'] = $correo;
                 $_SESSION['start'] = time();
                 $_SESSION['expire'] = $_SESSION['start'] + (10 * 60) ;
-                echo ("<SCRIPT LANGUAGE='JavaScript'> window.location.href='mueblista.php'; </SCRIPT>");
+                echo ("<SCRIPT LANGUAGE='JavaScript'> window.location.href='index.php'; </SCRIPT>");
             }else { 
                 echo ("<SCRIPT LANGUAGE='JavaScript'> window.alert('El Usuario o Password ingresados son incorrectos o no coinciden') window.location.href='login_mueblista.php'; </SCRIPT>");
             }          
