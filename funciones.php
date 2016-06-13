@@ -371,14 +371,20 @@ function apellido_usuario($correo){
 
 function listar_muebles_mueblista($rut_mueblista){
     $conn=conectarse();
-    $SQL="SELECT foto, calificacion, tipo FROM mueble WHERE mueble.id_sticker=(SELECT id_sticker from sticker WHERE rut_mueblista='".$rut_mueblista."')";
+    $SQL="SELECT correo,tipo, calificacion FROM mueble WHERE mueble.correo=(SELECT correo from mueblista WHERE rut_mueblista='".$rut_mueblista."')";
      $result=mysql_query($SQL);
         while($row=mysql_fetch_array($result)){
-            echo '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <ul class="list-group text-center col-md-4 col-sm-6 col-xs-12">
-                  <li class="list-group-item">Tipo: '.$row[2].' </li>
-                  <li class="list-group-item">Calificacion:  '.$row[1].' </li>
-            </ul> ';
+            echo '
+            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-4 col-sm-4 col-xs-4">
+            <img src="img/mueble.png" class="img-responsive img-rounded">
+            </div>
+            <ul class="list-group col-md-8 col-sm-8 col-xs-8">
+                  <li class="list-group-item">'.$row[0].' </li>
+                  <li class="list-group-item">'.$row[1].' </li>
+                  <li class="list-group-item">'.$row[2].' </li>
+            </ul>
+          </div>';
         }
        //<li><img src="'.$row[0].'"></li>
     mysql_close();
@@ -419,15 +425,22 @@ function generar_id(){
 ///////////////////////////////RANKING/////////////////////////////////////////
 function ranking_mueblista(){
     $conn=conectarse();
-    $SQL="SELECT rut_mueblista,nombre,calificacion FROM mueblista ORDER BY calificacion DESC";
+    $SQL="SELECT nombre,telefono,direccion FROM mueblista ORDER BY calificacion DESC";
     $result=mysql_query($SQL);
+    $ranking = 0;
     while($row=mysql_fetch_array($result)){
+    $ranking = $ranking + 1;
       echo'<meta charset="UTF-8">
-            <ul class="list-group text-center col-md-4 col-sm-6 col-xs-12"  >
-                  <li class="list-group-item">Rut: '.$row[0].' </li>
-                  <li class="list-group-item">Nombre: '.$row[1].' </li>
-                  <li class="list-group-item">Calificacion: '.$row[2].' </li>
-            </ul>';
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-4 col-sm-4 col-xs-4">
+            <img src="img/men.jpg" class="img-responsive img-rounded">
+            </div>
+            <ul class="list-group col-md-8 col-sm-8 col-xs-8">
+                  <li class="list-group-item"><h4>'.$ranking.'. '.$row[0].'</h4></li>
+                  <li class="list-group-item">'.$row[1].' </li>
+                  <li class="list-group-item">'.$row[2].' </li>
+            </ul>
+          </div>';
     }
     mysql_close();
   }
