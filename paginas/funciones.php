@@ -410,17 +410,16 @@ function listar_muebles_mueblista($rut_mueblista){
     mysql_close();
   }
 
-
-///////////////////////////Generar id sticker/////////////////////////////////////
-function generar_id(){
-    $conn=conectarse();
-    $str = "0123456789";
-    $cad = " ";
-     for ($i=0;$i<12;$i++){
-    $cad .= substr($str, rand(0,62),1);
-     }
-     print($cad);
-     }
+    function id(){
+               $conn=conectarse();
+              $SQL="SELECT MAX(id_sticker) FROM sticker";
+              $result=mysql_query($SQL);
+              while($row = mysql_fetch_array($result)){
+                $id=$row[0]+1;
+                echo '<input name="id" value='.$id.' class="form-control"readonly>';
+              }
+              mysql_close();
+    }
 
 ///////////////////////////////RANKING/////////////////////////////////////////
 function ranking_mueblista(){
