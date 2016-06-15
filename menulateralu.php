@@ -15,7 +15,5 @@
             <li><a class="oton">Ver mueblista</a></li>
                      
              <li><a class="oton">Eliminar mueblista</a></li>
-                      
-            <li><a class="oton">Cerrar sesion</a></li>
       </ul>
 </div>

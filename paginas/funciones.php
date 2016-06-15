@@ -443,5 +443,26 @@ function ranking_mueblista(){
     }
     mysql_close();
   }
+function ranking(){
+    $conn=conectarse();
+    $SQL="SELECT nombre,telefono,direccion FROM mueblista ORDER BY calificacion DESC";
+    $result=mysql_query($SQL);
+    $ranking = 0;
+    while($row=mysql_fetch_array($result)){
+    $ranking = $ranking + 1;
+      echo'<meta charset="UTF-8">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-4 col-sm-4 col-xs-4">
+            <img src="img/men.jpg" class="img-responsive img-rounded">
+            </div>
+            <ul class="list-group col-md-8 col-sm-8 col-xs-8">
+                  <li class="list-group-item"><h4>'.$ranking.'. '.$row[0].'</h4></li>
+                  <li class="list-group-item">'.$row[1].' </li>
+                  <li class="list-group-item">'.$row[2].' </li>
+            </ul>
+          </div>';
+    }
+    mysql_close();
+  }
 
 ?>
