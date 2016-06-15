@@ -1,10 +1,34 @@
 <?php
+session_start();
+?>
+  <!DOCTYPE html>
+  <html>
+  <header>
+    <li>
+      <?php
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+                    $namex = $_SESSION['rut'];
+                    echo "<a href='mi_perfil.php'>BIENVENIDO: <font color=#68D800>$namex</font></a>";
+                }
+                    else echo "<a class='loquito' href='login_administrador.php'>INICIAR SESION</a>";
+            ?>
+    </li>
+    <li>
+      <?php
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+                    $namex = $_SESSION['correo'];
+                    echo "<a href='close.php'>CERRAR SESION</a>";
+                }
+            ?>
+    </li>
+  </header>
+  <?php
     // Pequeña lógica para capturar la pagina que queremos abrir
     $pagina = isset($_GET['p']) ? strtolower($_GET['p']) : 'agregar_sticker';
 
     // El fragmento de html que contiene la cabecera de nuestra web
     require_once 'header.php';
-    require_once 'menulateralu.php';
+    require_once 'menulateralu_mueblista.php';
 
 
     /* Estamos considerando que el parámetro enviando tiene el mismo nombre del archivo a cargar, si este no fuera así
@@ -18,3 +42,4 @@
     //require_once 'footer.php';
     
 
+?>

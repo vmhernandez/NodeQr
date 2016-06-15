@@ -40,7 +40,7 @@ session_start();
 
             if($count == 1){
                 $_SESSION['loggedin'] = true;
-                $_SESSION['correo'] = $correo;
+                $_SESSION['rut'] = $correo;
                 $_SESSION['start'] = time();
                 $_SESSION['expire'] = $_SESSION['start'] + (10 * 60) ;
                 echo ("<SCRIPT LANGUAGE='JavaScript'> window.location.href='mueblista.php'; </SCRIPT>");
