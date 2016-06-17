@@ -6,7 +6,7 @@
                      
             <li class="<?php echo $pagina == 'leer_qr' ? 'active' : ''; ?>"><a href="?p=leer_qr" class="oton">Consultar QR</a></li>
                      
-            <li><a class="oton">Agregar administrador</a></li>
+            <li class="<?php echo $pagina == 'agregar_administrador' ? 'active' : ''; ?>"><a href="?p=agregar_administrador" class="oton">Agregar administrador</a></li>
             
             <li><a class="oton">Quitar administrador</a></li>
             
