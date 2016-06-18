@@ -27,9 +27,9 @@ include "conexion.php" ;
     }
     
     ///////AGREGAR MADERA////////////////////
-    function agregar_madera($nombre){
+    function agregar_madera($nombre,$empresa,$uso,$descripcion){
         $conn=conectarse();
-        $SQL="INSERT INTO madera (nombre) VALUES('".$nombre."')";
+        $SQL="INSERT INTO madera (nombre,Empresa,uso,descripcion) VALUES('".$nombre."','".$empresa."','".$uso."','".$descripcion."')";
         if(mysql_query($SQL)){
             return true;
         }else{

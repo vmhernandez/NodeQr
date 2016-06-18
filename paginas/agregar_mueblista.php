@@ -1,40 +1,43 @@
 <?php
     include "funciones.php";
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-          <ul><li><a href="index.php">Index</a></li>
-            </ul>
-        <table>
-            <form action="agregar_mueblista.php" method="post">
-                <tr>
-                    <td>Rut(*)</td>
-                    <td><input name="rut_mueblista" type="number"></td>
-                </tr>
-                <tr>
-                    <td>Nombre(*)</td>
-                    <td><input name="nombre"></td>
-                </tr>
-                <tr>
-                    <td>Correo</td>
-                    <td><input name="correo" type="email"></td>
-                </tr>
-                <tr>
-                    <td>Telefono</td>
-                    <td><input name="telefono" type="number"></td>
-                </tr>
-                <tr>
-                    <td>Direccion</td>
-                    <td><input name="direccion"></td>
-                </tr>
-                <td width="103" align="center" valign="middle"><input type="submit" name="guardar" id="guardar" value="Guardar" /></td>
+<div class="col-md-8 col-sm-8 espacio principal">
+            <form action="<?php echo $pagina == 'agregar_sticker' ?>" method="post">
+               
+                <label class="col-sm-4 col-md-3 control-label espacio">Rut(*)</label>
+                 
+                <div class="col-sm-8 col-md-9">
+                <input class="form-control espacio" name="rut_mueblista" type="number"></div>
+                
+               
+                <label class="col-sm-4 col-md-3 control-label espacio">Nombre(*)</label>
+                  
+                <div class="col-sm-8 col-md-9">
+                <input class="form-control espacio" name="nombre"></div>
+                
+               
+                <label class="col-sm-4 col-md-3 control-label espacio">Correo</label>
+                  
+                <div class="col-sm-8 col-md-9">
+                <input class="form-control espacio" name="correo" type="email"></div>
+                
+               
+                <label class="col-sm-4 col-md-3 control-label espacio">Telefono</label>
+                 
+                <div class="col-sm-8 col-md-9">
+                <input class="form-control espacio" name="telefono" type="number"></div>
+                
+               
+                <label class="col-sm-4 col-md-3 control-label espacio">Direccion</label>
+                 
+                <div class="col-sm-8 col-md-9">
+                <input class="form-control espacio" name="direccion"></div>
+                
+                <div class="col-sm-12 col-md-12">
+                <input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="guardar" id="guardar" value="Guardar"/></div>
+               
             </form>
-        </table>
-    </body>
+</div>
          <?php
             if(isset($_POST['guardar'])){
 
@@ -50,7 +53,7 @@
                     if($resultado == true){
                     }
                      //Redireccionar                   
-                header ("Location: index.php");
+                header ("Location:");
                 }  
             }
          ?>

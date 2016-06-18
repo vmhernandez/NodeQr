@@ -1,6 +1,7 @@
 <?php
 include "conexion.php" ;
 ///////////////////////////////////////////////INGRESOS////////////////////////////////////////////////////////////////////////////////////
+
 ///////////////////////////////////////////AGREGAR////////////////////////////////////
     ////////AGREGAR ADMINISTRADOR//////////
     function agregar_administrador($correo,$contrasena){
@@ -27,9 +28,9 @@ include "conexion.php" ;
     }
     
     ///////AGREGAR MADERA////////////////////
-    function agregar_madera($nombre){
+   function agregar_madera($nombre,$empresa,$uso,$descripcion){
         $conn=conectarse();
-        $SQL="INSERT INTO madera (nombre) VALUES('".$nombre."')";
+        $SQL="INSERT INTO madera (nombre,Empresa,uso,descripcion) VALUES('".$nombre."','".$empresa."','".$uso."','".$descripcion."')";
         if(mysql_query($SQL)){
             return true;
         }else{
@@ -433,7 +434,7 @@ function ranking_mueblista(){
     mysql_close();
   }
     function id(){
-               $conn=conectarse();
+              $conn=conectarse();
               $SQL="SELECT MAX(id_sticker) FROM sticker";
               $result=mysql_query($SQL);
               while($row = mysql_fetch_array($result)){
