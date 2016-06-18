@@ -28,7 +28,7 @@ session_start();
 
     // El fragmento de html que contiene la cabecera de nuestra web
     require_once 'header.php';
-    require_once 'menulateralu.php';
+    require_once 'menulateral_admin.php';
 
 
     /* Estamos considerando que el parámetro enviando tiene el mismo nombre del archivo a cargar, si este no fuera así
