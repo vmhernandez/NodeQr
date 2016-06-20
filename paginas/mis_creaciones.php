@@ -3,10 +3,8 @@
   include "paginas/funciones.php";  
 ?>
   <div class="contenedor">
-    <h2>Muebles asociados</h2>
+   <div class="row">
     <?php
       $rut_mueblista=$namex;
       listar_muebles_mueblista($rut_mueblista);
     ?>
-
-  </div>

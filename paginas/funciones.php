@@ -137,9 +137,9 @@ include "conexion.php" ;
 
     
     //////////MODIFICAR MUEBLISTA////
-    function modificar_mueblista($rut_mueblista,$nombre,$correo,$telefono,$direccion,$calificacion){
+    function modificar_mueblista($rut_mueblista,$nombre,$correo,$telefono,$direccion){
         $conn=conectarse();
-        $SQL="UPDATE mueblista SET nombre='".$nombre."',correo='".$correo."', telefono='".$telefono."', direccion='".$direccion."', calificacion='".$calificacion."' WHERE rut_mueblista='".$rut_mueblista."'";
+        $SQL="UPDATE mueblista SET nombre='".$nombre."',correo='".$correo."', telefono='".$telefono."', direccion='".$direccion."'WHERE rut_mueblista='".$rut_mueblista."'";
         if(mysql_query($SQL)){
             return true;
         }else{
@@ -464,5 +464,27 @@ function ranking(){
     }
     mysql_close();
   }
+  function mostrar_datos_mueblista($rut){
+      $conn=conectarse();
+      $SQL="SELECT nombre, correo, telefono, direccion FROM mueblista WHERE rut_mueblista='".$rut."'";
+      $result=mysql_query($SQL);
+      while($row =mysql_fetch_array($result)){
+      echo '
+          <div class="col-sm-8 col-md-9">
+          <input name="nombre" value='.$row[0].' class="form-control" type="text">
+          </div>
+          <div class="col-sm-8 col-md-9">
+            <input name="correo" value='.$row[1].' class="form-control" type="email">
+          </div>
+          <div class="col-sm-8 col-md-9">
+          <input name="telefono" value='.$row[2].' class="form-control" type="number">
+          </div>
+          <div class="col-sm-8 col-md-9">
+            <input name="direccion" value='.$row[3].' class="form-control" type="text">
+          </div>';
+      }
+        mysql_close();
+  }
+
 
 ?>

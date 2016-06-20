@@ -8,7 +8,7 @@ session_start();
         <li>
             <?php
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-                    $namex = $_SESSION['correo'];
+                    $namex = $_SESSION['rut'];
                     echo "<a href='mi_perfil.php'>BIENVENIDO: <font color=#68D800>$namex</font></a>";
                 }
                     else echo "<a class='loquito' href='login_mueblista.php'>INICIAR SESION</a>";
@@ -17,7 +17,7 @@ session_start();
         <li>
             <?php
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-                    $namex = $_SESSION['correo'];
+                    $namex = $_SESSION['rut'];
                     echo "<a href='close.php'>CERRAR SESION</a>";
                 }
                 else echo "<a  href='registrar_mueblista.php'>REGISTRARSE</a>"
@@ -40,7 +40,7 @@ session_start();
 
             if($count == 1){
                 $_SESSION['loggedin'] = true;
-                $_SESSION['correo'] = $correo;
+                $_SESSION['rut'] = $correo;
                 $_SESSION['start'] = time();
                 $_SESSION['expire'] = $_SESSION['start'] + (10 * 60) ;
                 echo ("<SCRIPT LANGUAGE='JavaScript'> window.location.href='index.php'; </SCRIPT>");

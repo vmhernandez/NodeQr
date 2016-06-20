@@ -8,9 +8,9 @@ session_start();
       <?php
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
                     $namex = $_SESSION['rut'];
-                    echo "<a href='mi_perfil.php'>BIENVENIDO: <font color=#68D800>$namex</font></a>";
+                    echo "<a href='mueblista.php'>BIENVENIDO: <font color=#68D800>$namex</font></a>";
                 }
-                    else echo "<a class='loquito' href='login_administrador.php'>INICIAR SESION</a>";
+                    else echo "<a class='loquito' href='index.php'>INICIAR SESION</a>";
             ?>
     </li>
     <li>
