@@ -56,7 +56,7 @@
     <div id="imprimirqr" class="center-block">
       <?php echo '<img class ="center-block espacio" src="'.$PNG_WEB_DIR.basename($filename).' "/>';?>
 
-        <form class="form-horizontal" method="post">
+        <form class="form-horizontal" action="<?php echo $pagina == 'agregar_sticker_mueblista' ?>" method="post">
 
           <div class="col-md-4 col-sm-4"></div>
           <div class="center-block espacio col-md-4 col-sm-4">
