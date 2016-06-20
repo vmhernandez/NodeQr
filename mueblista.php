@@ -16,7 +16,7 @@ session_start();
     <li>
       <?php
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-                    $namex = $_SESSION['correo'];
+                    $namex = $_SESSION['rut'];
                     echo "<a href='close.php'>CERRAR SESION</a>";
                 }
             ?>

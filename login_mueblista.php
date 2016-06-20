@@ -8,7 +8,7 @@
         rules:{
             rut:{
                 required:true,
-                rangelength: [9]
+                rangelength: [7,9]
             },
             contrasena:{
                 required:true,
