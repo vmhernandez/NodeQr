@@ -372,21 +372,21 @@ function apellido_usuario($correo){
 
 function listar_muebles_mueblista($rut_mueblista){
     $conn=conectarse();
-    $SQL="SELECT correo,tipo, calificacion FROM mueble WHERE mueble.correo=(SELECT correo from mueblista WHERE rut_mueblista='".$rut_mueblista."')";
-     $result=mysql_query($SQL);
-        while($row=mysql_fetch_array($result)){
-            echo '
-            <div class="col-md-6 col-sm-6 col-xs-12">
-            <div class="col-md-4 col-sm-4 col-xs-4">
-            <img src="img/mueble.png" class="img-responsive img-rounded">
-            </div>
-            <ul class="list-group col-md-8 col-sm-8 col-xs-8">
-                  <li class="list-group-item">'.$row[0].' </li>
-                  <li class="list-group-item">'.$row[1].' </li>
-                  <li class="list-group-item">'.$row[2].' </li>
-            </ul>
-          </div>';
-        }
+    $SQL="SELECT correo,tipo, calificacion FROM mueble JOIN sticker USING (id_sticker) WHERE sticker.rut_mueblista='".$rut_mueblista."'";
+    $result=mysql_query($SQL);
+    while($row=mysql_fetch_array($result)){
+      echo '
+        <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="col-md-4 col-sm-4 col-xs-4">
+        <img src="img/mueble.png" class="img-responsive img-rounded">
+        </div>
+        <ul class="list-group col-md-8 col-sm-8 col-xs-8">
+          <li class="list-group-item">'.$row[0].' </li>
+          <li class="list-group-item">'.$row[1].' </li>
+          <li class="list-group-item">'.$row[2].' </li>
+        </ul>
+        </div>';
+    }
        //<li><img src="'.$row[0].'"></li>
     mysql_close();
   }

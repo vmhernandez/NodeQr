@@ -371,7 +371,7 @@ function apellido_usuario($correo){
 
 function listar_muebles_mueblista($rut_mueblista){
     $conn=conectarse();
-    $SQL="SELECT correo,tipo, calificacion FROM mueble WHERE mueble.correo=(SELECT correo from mueblista WHERE rut_mueblista='".$rut_mueblista."')";
+    $SQL="SELECT correo,tipo, calificacion FROM mueble JOIN sticker USING (id_sticker) WHERE sticker.rut_mueblista='".$rut_mueblista."'";
      $result=mysql_query($SQL);
         while($row=mysql_fetch_array($result)){
             echo '
