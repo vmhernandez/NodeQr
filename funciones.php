@@ -479,4 +479,15 @@ function ranking_mueblista(){
       }
         mysql_close();
   }
+
+function modificar_pass_mueblista($correo,$contrasena){
+        $conn=conectarse();
+        $SQL="UPDATE mueblista SET contrasena='".$contrasena."' WHERE rut_mueblista='".$correo."'";
+        if(mysql_query($SQL)){
+            return true;
+        }else{
+            return false;
+        }
+        mysql_close();
+    }
 ?>

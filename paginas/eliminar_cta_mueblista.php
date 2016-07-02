@@ -22,7 +22,7 @@
                 $rut_mueblista=$namex;
                 $contrasena=$_POST['contrasena'];
                 $rcontrasena=$_POST['rcontrasena'];
-                if (($contrasena == "")||($contrasena!=$rcontrasena)){
+                if (($rcontrasena == "")||($contrasena == "")||($contrasena!=$rcontrasena)){
                 }else{
                     $resultado = eliminar_mueblista($rut_mueblista);
                     if($resultado == true){
