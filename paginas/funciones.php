@@ -99,18 +99,6 @@ include "conexion.php" ;
         mysql_close();
     }
 
-    //////////MODIFICAR CONTRASEÑA DEL USUARIO////
-    function modificar_pass_usuario($correo,$contrasena){
-        $conn=conectarse();
-        $SQL="UPDATE usuario SET contrasena='".$contrasena."' WHERE correo='".$correo."'";
-        if(mysql_query($SQL)){
-            return true;
-        }else{
-            return false;
-        }
-        mysql_close();
-    }
-
     //////////MODIFICAR INFORMACION DEL MUEBLE////
     function modificar_mueble($id_mueble,$foto,$calificacion,$tipo){
         $conn=conectarse();
@@ -499,6 +487,19 @@ function ranking(){
         mysql_close();
   }
 
+  function clave_usuario($correo){
+      $conn=conectarse();
+      $SQL="SELECT contrasena FROM usuario WHERE correo='".$correo."'";
+      $result=mysql_query($SQL);
+      while($row =mysql_fetch_array($result)){
+      echo '
+          <div class="col-sm-8 col-md-9">
+          <input name="contrasena" value='.$row[0].' class="form-control" type="hidden">
+          </div>';
+      }
+        mysql_close();
+  }
+
 function modificar_pass_mueblista($correo,$contrasena){
         $conn=conectarse();
         $SQL="UPDATE mueblista SET contrasena='".$contrasena."' WHERE rut_mueblista='".$correo."'";
@@ -509,4 +510,56 @@ function modificar_pass_mueblista($correo,$contrasena){
         }
         mysql_close();
     }
+
+function modificar_pass_usuario($correo,$contrasena){
+        $conn=conectarse();
+        $SQL="UPDATE usuario SET contrasena='".$contrasena."' WHERE correo='".$correo."'";
+        if(mysql_query($SQL)){
+            return true;
+        }else{
+            return false;
+        }
+        mysql_close();
+    }
+
+
+  function mis_muebles_usuario($correo){
+      $conn=conectarse();
+      $SQL="SELECT id_mueble,tipo,calificacion FROM mueble WHERE correo='".$correo."'";
+      $result=mysql_query($SQL);
+      while($row =mysql_fetch_array($result)){
+      echo '
+          <div class="col-sm-8 col-md-9">
+          <input name="id_mueble" value='.$row[0].' class="form-control" type="text">
+          </div>
+          <div class="col-sm-8 col-md-9">
+          <input name="tipo" value='.$row[1].' class="form-control" type="text">
+          </div>
+          <div class="col-sm-8 col-md-9">
+          <input name="calificacion" value='.$row[2].' class="form-control" type="text">
+          </div>
+          <div class="col-sm-6 col-md-6">
+          <input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="editar" id="editar" value="Editar"/>
+          </div>
+          <div class="col-sm-6 col-md-6">
+          <input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="eliminar" id="eliminar" value="Eliminar"/>
+          </div>';
+      }
+        mysql_close();
+  }
+function mostrar_datos_usuario($correo){
+      $conn=conectarse();
+      $SQL="SELECT nombre, apellido FROM usuario WHERE correo='".$correo."'";
+      $result=mysql_query($SQL);
+      while($row =mysql_fetch_array($result)){
+      echo '
+          <div class="col-sm-8 col-md-9">
+          <input name="nombre" value='.$row[0].' class="form-control" type="text">
+          </div>
+          <div class="col-sm-8 col-md-9">
+            <input name="apellido" value='.$row[1].' class="form-control" type="text">
+          </div>';
+      }
+        mysql_close();
+  }
 ?>

@@ -24,11 +24,11 @@ session_start();
   </header>
   <?php
     // Pequeña lógica para capturar la pagina que queremos abrir
-    $pagina = isset($_GET['p']) ? strtolower($_GET['p']) : 'agregar_sticker';
+    $pagina = isset($_GET['p']) ? strtolower($_GET['p']) : 'agregar_sticker_mueblista';
 
     // El fragmento de html que contiene la cabecera de nuestra web
     require_once 'header.php';
-    require_once 'menulateralu_mueblista.php';
+    require_once 'menulateralu_usuario.php';
 
 
     /* Estamos considerando que el parámetro enviando tiene el mismo nombre del archivo a cargar, si este no fuera así

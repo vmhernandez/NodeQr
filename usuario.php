@@ -1,6 +1,32 @@
+  
+
+<?php
+session_start();
+?>
+  <!DOCTYPE html>
+  <html>
+  <header>
+    <li>
+      <?php
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+                    $namex = $_SESSION['correo'];
+                    echo "<a href='mueblista.php'>BIENVENIDO: <font color=#68D800>$namex</font></a>";
+                }
+                    else echo "<a class='loquito' href='index.php'>INICIAR SESION</a>";
+            ?>
+    </li>
+    <li>
+      <?php
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+                    $namex = $_SESSION['correo'];
+                    echo "<a href='close.php'>CERRAR SESION</a>";
+                }
+            ?>
+    </li>
+  </header>
 <?php
     // Pequeña lógica para capturar la pagina que queremos abrir
-    $pagina = isset($_GET['p']) ? strtolower($_GET['p']) : 'agregar_sticker';
+    $pagina = isset($_GET['p']) ? strtolower($_GET['p']) : 'mis_muebles';
 
     // El fragmento de html que contiene la cabecera de nuestra web
     require_once 'header.php';
@@ -16,5 +42,4 @@
 
     // El fragmento de html que contiene el pie de página de nuestra web
     //require_once 'footer.php';
-    
-
+?>
