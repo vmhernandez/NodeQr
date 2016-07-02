@@ -1,47 +1,40 @@
 <?php
-    include "funciones.php";
+  require_once 'header.php';
+  include "paginas/funciones.php";
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-          <ul><li><a href="index.php">Index</a></li>
-            </ul>
-        <table>
-            <form action="registrar_mueblista.php" method="post">
-                <tr>
-                    <td>Rut(*)</td>
-                    <td><input name="rut_mueblista" type="number"></td>
-                </tr>
-                <tr>
-                    <td>Contraseña(*)</td>
-                    <td><input name="contrasena" type="password"></td>
-                </tr>
-                <tr>
-                    <td>Reingrese su Contraseña(*)</td>
-                    <td><input name="rcontrasena" type="password"></td>
-                </tr>
-                <tr>
-                    <td>Nombre(*)</td>
-                    <td><input name="nombre"></td>
-                </tr>
-                <tr>
-                    <td>Correo</td>
-                    <td><input name="correo" type="email"></td>
-                </tr>
-                <tr>
-                    <td>Telefono</td>
-                    <td><input name="telefono" type="number"></td>
-                </tr>
-                <tr>
-                    <td>Direccion</td>
-                    <td><input name="direccion"></td>
-                </tr>
-                <td width="103" align="center" valign="middle"><input type="submit" name="guardar" id="guardar" value="Guardar" /></td>
+   
+   <form action="registrar_mueblista.php" method="post">
+                <label class="col-sm-4 col-md-3 control-label espacio">Rut(*)</label>
+                
+                <div class="col-sm-8 col-md-9"><input class="form-control espacio" name="rut_mueblista" type="number"/></div>
+                
+                <label class="col-sm-4 col-md-3 control-label espacio">Nombre</label>
+                
+                <div class="col-sm-8 col-md-9"><input class="form-control espacio" name="nombre"/></div>
+                
+                <label class="col-sm-4 col-md-3 control-label espacio">Correo</label>
+                
+                <div class="col-sm-8 col-md-9"><input class="form-control espacio" name="correo" type="email"/></div>
+                
+                <label class="col-sm-4 col-md-3 control-label espacio">Direccion</label>
+                
+                <div class="col-sm-8 col-md-9"><input class="form-control espacio" name="direccion"/></div>
+               
+                <label class="col-sm-4 col-md-3 control-label espacio">Telefono</label>
+                
+                <div class="col-sm-8 col-md-9"><input class="form-control espacio" name="telefono"  type="number"/></div>
+                
+                <label class="col-sm-4 col-md-3 control-label espacio">Contraseña(*)</label>
+                
+                <div class="col-sm-8 col-md-9"><input class="form-control espacio" name="contrasena"  type="password"/></div>
+                
+                <label class="col-sm-4 col-md-3 control-label espacio">Reingrese su contraseña(*)</label>
+                
+                <div class="col-sm-8 col-md-9"><input class="form-control espacio" name="rcontrasena"  type="password"/></div>
+                
+                <div class="col-sm-12 col-md-12"><input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="guardar" id="guardar" value="Guardar" /></div>
             </form>
-        </table>
+</div>
     </body>
          <?php
             if(isset($_POST['guardar'])){

@@ -5,5 +5,6 @@
     <li class="<?php echo $pagina == 'mis_creaciones' ? 'active' : ''; ?>"><a href="?p=mis_creaciones" class="oton">Mis creaciones</a></li>
     <li class="<?php echo $pagina == 'ranking' ? 'active' : ''; ?>"><a href="?p=ranking" class="oton">Ranking</a></li>
     <li class="<?php echo $pagina == 'mis_datos_mueblista' ? 'active' : ''; ?>"><a href="?p=mis_datos_mueblista" class="oton">Mis datos</a></li>
+    <li class="<?php echo $pagina == 'eliminar_cta_mueblista' ? 'active' : ''; ?>"><a href="?p=eliminar_cta_mueblista" class="oton">Eliminar mi cuenta</a></li>
   </ul>
 </div>

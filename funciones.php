@@ -466,4 +466,17 @@ function ranking_mueblista(){
       }
         mysql_close();
   }
+
+  function clave_mueblista($rut){
+      $conn=conectarse();
+      $SQL="SELECT contrasena FROM mueblista WHERE rut_mueblista='".$rut."'";
+      $result=mysql_query($SQL);
+      while($row =mysql_fetch_array($result)){
+      echo '
+          <div class="col-sm-8 col-md-9">
+          <input name="contrasena" value='.$row[0].' class="form-control" type="hidden">
+          </div>';
+      }
+        mysql_close();
+  }
 ?>
