@@ -38,10 +38,10 @@
                    <input type="text" name="correo" placeholder="&#128588; Correo" class="form-control " id="correo"/>
                 </div>
                    <div class ="center-block espacio col-md-12 col-sm-12">
-                       <input type="password" name="contrasena"placeholder="&#128273; Password" class="form-control" id="contrasena"/>
+                       <input type="password" name="contrasena" placeholder="&#128273; Password" class="form-control" id="contrasena"/>
                    </div>
                     <div class ="center-block espacio col-md-12 col-sm-12">
-                     <input type="submit" name="iniciar"value="Iniciar sesion" class="form-control text-center"/>
+                     <input type="submit" name="iniciar" value="Iniciar sesion" class="form-control text-center"/>
                         </br>
                     </div>
              </form>

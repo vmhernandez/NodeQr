@@ -1,7 +1,21 @@
-<?php include "funciones.php"; ?>
+<?php include "funciones.php"; 
+?>
+<link rel="stylesheet" href="../estiloValidacion.css">
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery.validate.js"></script>
+<script>
+function confirmar()
+{
+	if(confirm('¿Estas seguro desea elimar al administrador'))
+		return true;
+	else
+		return false;
+}
+
+</script>
 <div class="col-md-8 col-sm-8 espacio principal">
             
-        <form action="<?php echo $pagina == 'agregar_sticker' ?>" method="post">
+        <form action="<?php echo $pagina == 'agregar_sticker' ?>" method="post" onsubmit="return confirmar()">
                 
             <label class="col-sm-12 col-md-12 control-label espacio">Ingresar el correo del administrador que desea quitar</label>    
                 
