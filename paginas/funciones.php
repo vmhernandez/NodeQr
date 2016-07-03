@@ -523,23 +523,29 @@ function modificar_pass_usuario($correo,$contrasena){
     }
 
 
-  function mis_muebles_usuario($correo){
+      function mis_muebles_usuario($correo){
       $conn=conectarse();
-      $SQL="SELECT id_mueble,tipo,calificacion FROM mueble WHERE correo='".$correo."'";
+      $ruta='"C:\wamp\www\NodeQr\paginas\Imagenes';
+      $SQL="SELECT id_mueble,tipo,calificacion,foto FROM mueble WHERE correo='".$correo."'";
       $result=mysql_query($SQL);
       while($row =mysql_fetch_array($result)){
-    echo '
-          <div class="col-sm-8 col-md-9">
-          <input name="id_mueble" value='.$row[0].' class="form-control" type="text" readonly>
-          </div>
-          <div class="col-sm-8 col-md-9">
-          <input name="tipo" value='.$row[1].' class="form-control" type="text" readonly>
-          </div>
-          <div class="col-sm-8 col-md-9">
-          <input name="calificacion" value='.$row[2].' class="form-control" type="text" readonly>
-          </div>
-          <div class="col-sm-6 col-md-2">
-          <input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="eliminar" id="eliminar" value="Eliminar"/>
+    echo '<div class="col-md-4 espacio">
+            <div class="col-sm-12 col-md-12">
+              <img class="img-responsive img-rounded" src="paginas/Imagenes/..'.$row[3].'" />
+            </div>
+            <div class="col-sm-8 col-md-12">
+              <input name="id_mueble" value='.$row[0].' class="form-control" type="text" readonly>
+            </div>
+            <div class="col-sm-8 col-md-12">
+              <input name="tipo" value='.$row[1].' class="form-control" type="text" readonly>
+            </div>
+            <div class="col-sm-8 col-md-12">
+              <input name="calificacion" value='.$row[2].' class="form-control" type="text" readonly>
+            </div>
+  
+            <div class="col-sm-12 col-md-12">
+              <input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="eliminar" id="eliminar" value="Eliminar"/>
+            </div>
           </div>';
       }
         mysql_close();

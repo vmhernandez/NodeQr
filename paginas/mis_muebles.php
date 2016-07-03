@@ -20,25 +20,5 @@
                 }
             }
          ?>
-         
-    <?php
-            if(isset($_POST['editar'])){
-              $id_mueble=$POST['id_mueble'];
-                header ("Location:usuario.php");
-                }
-         ?>
-         
-  <script>
-    function boton(){
-      var el1=document.querySelector('.c1').removeAttribute('readonly', true);
-      el1;
-      var el2=document.querySelector('.c2').removeAttribute('readonly', true);
-      el2;
-      var el3=document.querySelector('.c3').removeAttribute('readonly', true);
-      el3;
-    }
-    document.querySelector('#modificar').addEventListener('click',boton)
-  </script>
-  
 </body>
 </html>

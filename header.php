@@ -17,7 +17,7 @@
 
  <div class="container">
      <nav>
-     <a href="index.php">
+     <a>
      <img class="img-responsive center-block espacio logo" alt="Responsive image" src="img/nodeqr2.png">
      </a>
      </nav>
