@@ -238,10 +238,10 @@ include "conexion.php" ;
     //////LISTAR MUEBLISTAS//////////
     function listar_mueblistas(){
         $conn=conectarse();
-        $SQL="SELECT rut_mueblista FROM mueblista ORDER BY rut_mueblista";
+        $SQL="SELECT rut_mueblista,nombre FROM mueblista ORDER BY rut_mueblista";
         $result=mysql_query($SQL);
         while($row = mysql_fetch_array($result)){
-            echo '<option value="'.$row[0].'">'.$row[0].'</option>';
+            echo '<option value="'.$row[0].'">'.$row[1].'</option>';
         }
         mysql_close();
     }
@@ -249,10 +249,10 @@ include "conexion.php" ;
     //////LISTAR MADERA//////////
     function listar_madera(){
         $conn=conectarse();
-        $SQL="SELECT id_madera FROM madera ORDER BY id_madera";
+        $SQL="SELECT id_madera,nombre FROM madera ORDER BY id_madera";
         $result=mysql_query($SQL);
         while($row = mysql_fetch_array($result)){
-            echo '<option value="'.$row[0].'">'.$row[0].'</option>';
+            echo '<option value="'.$row[0].'">'.$row[1].'</option>';
         }
         mysql_close();
     }
