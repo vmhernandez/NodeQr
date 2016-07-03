@@ -29,9 +29,6 @@
          <div class="mueblista col-md-6 col-sm-6 espacio">       
             <div class="panel panel-default principal">
             <div class="panel-heading"><h2>Mueblista</h2></div>
-            <div class="fondo">
-                <img src="img/men.jpg" class="center-block img-circle">
-            </div>
            <form class="consultaqr" style="margin-top: 0px; margin-bottom: 0px;" method="post" action="muebles_mueblista.php">
             <?php
             if(isset($_POST['consulta'])){

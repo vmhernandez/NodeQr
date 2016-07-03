@@ -44,6 +44,10 @@
                         </br>
                     </div>
              </form>
+             <div class ="center-block espacio col-md-12 col-sm-12">
+                     <a href="registrar_mueblista.php">Crear cuenta</a>
+                        </br>
+                    </div>
         </div>     
         <?php
             if(isset($_POST['iniciar'])){

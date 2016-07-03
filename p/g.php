@@ -1,7 +1,7 @@
 <?php
 function generar_qr($data){
   include 'phpqrcode/qrlib.php';
-  $file = 'qr/'.$data.'.png'; 
+  $file = 'paginas/qr/'.$data.'.png'; 
   $data = $data; 
   QRcode::png($data, $file,QR_ECLEVEL_L,7);
   echo '

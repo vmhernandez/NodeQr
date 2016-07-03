@@ -24,14 +24,3 @@
       </li>
 
    </ul> 
-<script>
-$(document).ready(function() {
-    var heights = $(".altura").map(function() {
-        return $(this).height();
-    }).get(),
-
-    maxHeight = Math.max.apply(null, heights);
-
-    $(".altura").height(maxHeight);
-});
-</script>

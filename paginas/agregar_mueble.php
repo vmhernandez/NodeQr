@@ -189,6 +189,8 @@ function setwebcam()
                         <select name="tipo">
                             <option value="Cocina">Cocina</option>
                             <option value="Baño">Baño</option>
+                            <option value="Comedor">Comedor</option>
+                            <option value="Dormitorio">Dormitorio</option>
                         </select>
                     </td>
                 </tr>
@@ -201,11 +203,13 @@ function setwebcam()
             if(isset($_POST['guardar'])){
                 $correo=$_SESSION['correo'];
                 $id_sticker=$_POST['txtCodigo'];
+                
                 $ruta = "C:\wamp\www\NodeQr\paginas\Imagenes\..";
                 opendir($ruta);
                 $destino = $ruta.$_FILES['foto']['name'];
                 copy($_FILES['foto']['tmp_name'],$destino);
                 $foto=$_FILES['foto']['name'];
+                
                 $calificacion=$_POST['calificacion'];
                 $tipo=$_POST['tipo'];
                 if (($correo == "")|| ($id_sticker=="")||($foto=="")|| ($calificacion=="")|| ($tipo=="")){

@@ -52,9 +52,9 @@ include "conexion.php" ;
     }
     ////////////REGISTRAR USUARIO MUEBLISTA///////////
 
-    function registrar_mueblista($rut_mueblista,$contrasena,$nombre,$correo,$telefono,$direccion){
+    function registrar_mueblista($rut_mueblista,$contrasena,$nombre,$foto,$correo,$telefono,$direccion){
         $conn=conectarse();
-        $SQL="INSERT INTO mueblista (rut_mueblista,nombre,contrasena,correo,telefono,direccion) VALUES('".$rut_mueblista."','".$nombre."','".$contrasena."','".$correo."','".$telefono."','".$direccion."')";
+        $SQL="INSERT INTO mueblista (rut_mueblista,nombre, foto,contrasena,correo,telefono,direccion) VALUES('".$rut_mueblista."','".$nombre."','".$foto."','".$contrasena."','".$correo."','".$telefono."','".$direccion."')";
         if(mysql_query($SQL)){
             return true;
         }else{
@@ -62,6 +62,20 @@ include "conexion.php" ;
         }
         mysql_close();
     }
+
+    ////////////REGISTRAR USUARIO MUEBLISTA///////////
+
+    function registrar_usuario($correo,$contrasena,$nombre,$apellido,$foto){
+        $conn=conectarse();
+        $SQL="INSERT INTO usuario (correo,contrasena,nombre,apellido,foto) VALUES('".$correo."','".$contrasena."','".$nombre."','".$apellido."','".$foto."')";
+        if(mysql_query($SQL)){
+            return true;
+        }else{
+            return false;
+        }
+        mysql_close();
+    }
+
     
     /////////AGREGAR STICKER//////////////////
     function agregar_sticker($rut_mueblista,$id_madera){
@@ -323,16 +337,19 @@ function apellido_usuario($correo){
 ///////////////////////LISTAR MUEBLISTA SEGUN EL STICKER//////////////////////////////
     function listar_mueblista_sticker($id_sticker){
         $conn=conectarse();
-        $SQL="SELECT rut_mueblista, nombre, telefono, correo, direccion,calificacion FROM mueblista WHERE mueblista.rut_mueblista=(SELECT rut_mueblista from sticker where id_sticker='".$id_sticker."')";
+        $SQL="SELECT rut_mueblista, nombre, foto, telefono, correo, direccion,calificacion FROM mueblista WHERE mueblista.rut_mueblista=(SELECT rut_mueblista from sticker where id_sticker='".$id_sticker."')";
         $result=mysql_query($SQL);
         while($row=mysql_fetch_array($result)){  
           echo '
+            <div class="fondo">
+                <img class="center-block img-circle" src="paginas/Perfil/..'.$row[2].'" />
+            </div>
             <ul class="list-group text-center">
                  <li class="list-group-item">'.$row[1].'</li>
-                 <li class="list-group-item">'.$row[2].'</li>
                  <li class="list-group-item">'.$row[3].'</li>
                  <li class="list-group-item">'.$row[4].'</li>
                  <li class="list-group-item">'.$row[5].'</li>
+                 <li class="list-group-item">'.$row[6].'</li>
                  </ul>
              <input id="rut_mueblista" type="hidden" name="rut_mueblista" value="'.$row[0].'">';
         }
@@ -404,7 +421,7 @@ function listar_muebles_mueblista($rut_mueblista){
 ///////////////////////////////RANKING/////////////////////////////////////////
 function ranking_mueblista(){
     $conn=conectarse();
-    $SQL="SELECT nombre,telefono,direccion FROM mueblista ORDER BY calificacion DESC";
+    $SQL="SELECT nombre,telefono,direccion,foto FROM mueblista ORDER BY calificacion DESC";
     $result=mysql_query($SQL);
     $ranking = 0;
     while($row=mysql_fetch_array($result)){
@@ -412,7 +429,7 @@ function ranking_mueblista(){
       echo'<meta charset="UTF-8">
         <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="col-md-4 col-sm-4 col-xs-4">
-            <img src="img/men.jpg" class="img-responsive img-rounded">
+            <img class="img-responsive img-rounded" src="paginas/Perfil/..'.$row[3].'" />
             </div>
             <ul class="list-group col-md-8 col-sm-8 col-xs-8">
                   <li class="list-group-item"><h4>'.$ranking.'. '.$row[0].'</h4></li>
