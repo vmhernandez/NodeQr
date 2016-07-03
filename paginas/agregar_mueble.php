@@ -169,7 +169,7 @@ function setwebcam()
                 <canvas id="qr-canvas" width="200" height="200"></canvas>
                 <script type="text/javascript">load();</script>
                 
-                <form class="form-horizontal" method="post" action="<?php echo $pagina == 'mis_muebles' ?>">
+                <form class="form-horizontal" method="post" action="<?php echo $pagina == 'mis_muebles' ?>" enctype="multipart/form-data">
                 <div class="col-sm-6">
                 <input id="codigo" type="text" name="txtCodigo" class="form-control espacio">
                 </div>
@@ -178,7 +178,7 @@ function setwebcam()
                     <td>Foto</td>
                     <td><input name="foto" type="file"></td>
                 </tr>
-                  </div>
+                </div>
                 <div class="col-sm-6">
                 <input id="calificacion" type="number" min="1" max="5" name="calificacion" class="form-control espacio">
                 </div>
@@ -201,10 +201,14 @@ function setwebcam()
             if(isset($_POST['guardar'])){
                 $correo=$_SESSION['correo'];
                 $id_sticker=$_POST['txtCodigo'];
-                $foto=$_POST['foto'];
+                $ruta = "C:\wamp\www\NodeQr\paginas\Imagenes\..";
+                opendir($ruta);
+                $destino = $ruta.$_FILES['foto']['name'];
+                copy($_FILES['foto']['tmp_name'],$destino);
+                $foto=$_FILES['foto']['name'];
                 $calificacion=$_POST['calificacion'];
                 $tipo=$_POST['tipo'];
-                if (($correo == "")|| ($id_sticker=="")|| ($calificacion=="")|| ($tipo=="")){
+                if (($correo == "")|| ($id_sticker=="")||($foto=="")|| ($calificacion=="")|| ($tipo=="")){
                 }else{
                     $resultado = agregar_mueble($correo, $id_sticker,$foto,$calificacion,$tipo);
                     if($resultado == true){
