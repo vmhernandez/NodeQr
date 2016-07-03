@@ -528,20 +528,17 @@ function modificar_pass_usuario($correo,$contrasena){
       $SQL="SELECT id_mueble,tipo,calificacion FROM mueble WHERE correo='".$correo."'";
       $result=mysql_query($SQL);
       while($row =mysql_fetch_array($result)){
-      echo '
+    echo '
           <div class="col-sm-8 col-md-9">
-          <input name="id_mueble" value='.$row[0].' class="form-control" type="text">
-          </div>
-          <div class="col-sm-8 col-md-9">
-          <input name="tipo" value='.$row[1].' class="form-control" type="text">
+          <input name="id_mueble" value='.$row[0].' class="form-control c1" type="text" readonly>
           </div>
           <div class="col-sm-8 col-md-9">
-          <input name="calificacion" value='.$row[2].' class="form-control" type="text">
+          <input name="tipo" value='.$row[1].' class="form-control c2" type="text" readonly>
           </div>
-          <div class="col-sm-6 col-md-6">
-          <input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="editar" id="editar" value="Editar"/>
+          <div class="col-sm-8 col-md-9">
+          <input name="calificacion" value='.$row[2].' class="form-control c3" type="text" readonly>
           </div>
-          <div class="col-sm-6 col-md-6">
+          <div class="col-sm-6 col-md-2">
           <input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="eliminar" id="eliminar" value="Eliminar"/>
           </div>';
       }
