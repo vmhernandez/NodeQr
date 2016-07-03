@@ -530,13 +530,13 @@ function modificar_pass_usuario($correo,$contrasena){
       while($row =mysql_fetch_array($result)){
     echo '
           <div class="col-sm-8 col-md-9">
-          <input name="id_mueble" value='.$row[0].' class="form-control c1" type="text" readonly>
+          <input name="id_mueble" value='.$row[0].' class="form-control" type="text" readonly>
           </div>
           <div class="col-sm-8 col-md-9">
-          <input name="tipo" value='.$row[1].' class="form-control c2" type="text" readonly>
+          <input name="tipo" value='.$row[1].' class="form-control" type="text" readonly>
           </div>
           <div class="col-sm-8 col-md-9">
-          <input name="calificacion" value='.$row[2].' class="form-control c3" type="text" readonly>
+          <input name="calificacion" value='.$row[2].' class="form-control" type="text" readonly>
           </div>
           <div class="col-sm-6 col-md-2">
           <input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="eliminar" id="eliminar" value="Eliminar"/>
