@@ -69,7 +69,6 @@ function confirmar()
             
             </form>
         </div>
-         <script>alert(La clave ingresada es incorecta)</script>
 
          <?php
             if(isset($_POST['guardar'])){

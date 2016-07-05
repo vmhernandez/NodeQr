@@ -509,7 +509,7 @@ function ranking(){
       $result=mysql_query($SQL);
       while($row =mysql_fetch_array($result)){
       echo '
-          <div class="col-sm-8 col-md-9">
+          <div class="col-sm-12 col-md-12">
           <input name="contrasena" value='.$row[0].' class="form-control" type="hidden">
           </div>';
       }

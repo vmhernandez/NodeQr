@@ -1,37 +1,113 @@
 <?php
     include "funciones.php";
 ?>
+
+<link rel="stylesheet" href="estiloValidacion.css">
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script>
+
+$(document).ready(function() {
+    
+jQuery.validator.addMethod("letras", function(value, element) {
+return this.optional(element) || /^[a-záéóóúàèìòùäëïöüñ\s]+$/i.test(value);
+}); 
+    
+    $("#validar").validate({
+        rules:{
+            rut:{
+                required:true,
+                rangelength: [7,8]
+            },
+            nombre:{
+                required:true,
+                rangelength: [3,30],
+                letras:true
+                
+            },  
+            correo:{
+                required:true,
+                email:true
+                
+            },
+            telefono:{
+                required:true,
+                rangelength: [8,11]
+            },
+            direccion:{
+                required:true,
+                rangelength: [3,50]
+            }
+        },
+        messages:{
+            rut:{
+                required:"Campo obligatorio",
+                rangelength:"Ingrese 8 caracteres"
+            },
+            nombre:{
+                required:"Campo obligatorio",
+                rangelength:"Mínimo 3 y máximo 30 caracteres",
+                letras: "Ingrese solo letras"
+            },
+            correo:{
+                required:"Campo obligatorio",
+                email:"Formato erróneo"
+            },
+            telefono:{
+                required:"Campo obligatorio",
+                rangelength:"Mínimo 8 y máximo 11 caracteres"
+            },
+            direccion:{
+                required:"Campo obligatorio",
+                rangelength:"Mínimo 3 y máximo 40 caracteres"
+            }
+            
+        }
+           
+        });
+});    
+     
+    
+function confirmar()
+{
+	if(confirm('¿Estas seguro desea agregar al administrador'))
+		return true;
+	else
+		return false;
+}
+</script>
+
 <div class="col-md-8 col-sm-8 espacio principal">
-            <form action="<?php echo $pagina == 'agregar_sticker' ?>" method="post">
+            <form action="<?php echo $pagina == 'agregar_sticker' ?>" method="post" id="validar">
                
                 <label class="col-sm-4 col-md-3 control-label espacio">Rut(*)</label>
                  
                 <div class="col-sm-8 col-md-9">
-                <input class="form-control espacio" name="rut_mueblista" type="number"></div>
+                <input id="rut" class="form-control espacio" name="rut_mueblista" type="number"></div>
                 
                
                 <label class="col-sm-4 col-md-3 control-label espacio">Nombre(*)</label>
                   
                 <div class="col-sm-8 col-md-9">
-                <input class="form-control espacio" name="nombre"></div>
+                <input id="nombre" class="form-control espacio" name="nombre"></div>
                 
                
                 <label class="col-sm-4 col-md-3 control-label espacio">Correo</label>
                   
                 <div class="col-sm-8 col-md-9">
-                <input class="form-control espacio" name="correo" type="email"></div>
+                <input id="correo" class="form-control espacio" name="correo" type="email"></div>
                 
                
                 <label class="col-sm-4 col-md-3 control-label espacio">Telefono</label>
                  
                 <div class="col-sm-8 col-md-9">
-                <input class="form-control espacio" name="telefono" type="number"></div>
+                <input id="telefono" class="form-control espacio" name="telefono" type="number"></div>
                 
                
                 <label class="col-sm-4 col-md-3 control-label espacio">Direccion</label>
                  
                 <div class="col-sm-8 col-md-9">
-                <input class="form-control espacio" name="direccion"></div>
+                <input id="direccion" class="form-control espacio" name="direccion"></div>
                 
                 <div class="col-sm-12 col-md-12">
                 <input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="guardar" id="guardar" value="Guardar"/></div>

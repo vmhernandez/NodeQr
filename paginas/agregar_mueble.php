@@ -157,8 +157,64 @@ function setwebcam()
     setTimeout(captureToCanvas, 500);
 }
 </script>
-        <script type="text/javascript" src="paginas/llqrcode.js"></script>
-        <script src="paginas/jquery-1.12.3.js"></script>
+    
+    <script type="text/javascript" src="paginas/llqrcode.js"></script>
+    <script src="paginas/jquery-1.12.3.js"></script>
+    <link rel="stylesheet" href="estiloValidacion.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script>
+    $(document).ready(function() {
+    
+    $("#validar").validate({
+        rules:{
+            txtCodigo:{
+                required: true,
+                number: true
+            },
+            foto:{
+                required:true
+            },
+            tipo:{
+                required:true 
+            }, 
+            calificacion:{
+                required: true,
+                maxlength: 1
+            }
+        },
+        messages:{
+            txtCodigo:{
+                required:"Campo obligatorio"
+            },
+            foto:{
+                required:"Campo obligatorio"
+            },
+            tipo:{
+                required:"Campo obligatorio"
+            },
+            calificacion:{
+                required:"campo obligatorio",
+                maxlength:"la calificacion debe ser menor a 10"
+            }
+            
+        }
+           
+        });
+    });    
+     
+    
+    function confirmar()
+    {
+	if(confirm('¿Estas seguro desea agregar al administrador'))
+		return true;
+	else
+		return false;
+}
+
+    
+    </script>
+
            
             <div class="col-md-8 espacio principal">
                 <div style="display:none" id="result"></div>
@@ -169,33 +225,34 @@ function setwebcam()
                 <canvas id="qr-canvas" width="200" height="200"></canvas>
                 <script type="text/javascript">load();</script>
                 
-                <form class="form-horizontal" method="post" action="<?php echo $pagina == 'mis_muebles' ?>" enctype="multipart/form-data">
-                <div class="col-sm-6">
+                <form class="form-horizontal" method="post" action="<?php echo $pagina == 'mis_muebles' ?>" enctype="multipart/form-data" id="validar">
+                
+                <div class="col-sm-12">
                 <input id="codigo" type="text" name="txtCodigo" class="form-control espacio">
                 </div>
-                <div class="col-sm-6">
-                   <tr>
-                    <td>Foto</td>
-                    <td><input name="foto" type="file"></td>
-                </tr>
-                </div>
-                <div class="col-sm-6">
-                <input id="calificacion" type="number" min="1" max="5" name="calificacion" class="form-control espacio">
-                </div>
-                <div class="col-sm-6">
-                   <tr>
-                    <td>Tipo</td>
-                    <td>
-                        <select name="tipo">
-                            <option value="Cocina">Cocina</option>
-                            <option value="Baño">Baño</option>
-                            <option value="Comedor">Comedor</option>
-                            <option value="Dormitorio">Dormitorio</option>
+                
+                <label class="col-sm-4 col-md-3 control-label espacio">foto</label>
+                
+                 <div class="col-sm-8 col-md-9"><input name="foto" type="file" class="form-control espacio" ></div>
+                
+                <label class="col-sm-4 col-md-3 control-label espacio">Tipo</label>
+                
+                <div class="col-sm-8 col-md-9 ">
+                    <select name="tipo" class=" form-control espacio">
+                        <option value="Cocina">Cocina</option>
+                        <option value="Baño">Baño</option> 
+                        <option value="Comedor">Comedor</option>
+                        <option value="Dormitorio">Dormitorio</option>
                         </select>
-                    </td>
-                </tr>
-                  </div>
-                <td width="103" align="center" valign="middle"><input type="submit" name="guardar" id="guardar" value="Guardar" /></td>
+                </div>
+                
+                <label class="col-sm-4 col-md-3 control-label espacio">Calificacion</label>
+                
+                <div class="col-sm-8 col-md-9">
+                <input id="calificacion" type="number" name="calificacion" class="form-control espacio">
+                </div>
+                  
+                <div class="col-sm-12 col-md-12"><input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="guardar" id="guardar" value="Guardar" /></div>
             </form>
         </table>
     </body>

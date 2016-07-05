@@ -124,7 +124,7 @@ body {
                 $_SESSION['loggedin'] = true;
                 $_SESSION['correo'] = $correo;
                 $_SESSION['start'] = time();
-                $_SESSION['expire'] = $_SESSION['start'] + (10 * 60) ;
+                $_SESSION['expire'] = $_SESSION['start'] + (60 * 60) ;
                 echo ("<SCRIPT LANGUAGE='JavaScript'> window.location.href='admin.php'; </SCRIPT>");
             }else { 
                 echo ("<SCRIPT LANGUAGE='JavaScript'> window.location.href='index.php?p=login_administrador'; </SCRIPT>");
