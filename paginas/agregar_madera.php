@@ -13,9 +13,15 @@
                 
                 <div class="col-sm-8 col-md-9"><input class="form-control espacio" name="empresa"/></div>
                 
-                <label class="col-sm-4 col-md-3 control-label espacio">Uso</label>
-                
-                <div class="col-sm-8 col-md-9"><input class="form-control espacio" name="uso"/></div>
+                 <label class="col-sm-4 col-md-3 control-label espacio">Uso</label>
+
+                <div class="col-sm-8 col-md-9 ">
+                    <select name="uso" class=" form-control espacio">
+                            <option value="Construccion/interior">Construccion/interior</option>
+                            <option value="Mobiliario">Mobiliario</option>
+                            <option value="Revestimiento">Revestimiento</option>
+                        </select>
+                </div>       
                 
                 <label class="col-sm-4 col-md-3 control-label espacio">Descripcion</label>
                 

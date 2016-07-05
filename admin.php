@@ -1,26 +1,30 @@
-<?php
-session_start();
-?>
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html>
   <header>
-    <li>
-      <?php
-                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-                    $namex = $_SESSION['correo'];
-                    echo "<a href='mi_perfil.php'>BIENVENIDO: <font color=#68D800>$namex</font></a>";
-                }
-                    else echo "<a class='loquito' href='login_administrador.php'>INICIAR SESION</a>";
-            ?>
-    </li>
-    <li>
-      <?php
-                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-                    $namex = $_SESSION['correo'];
-                    echo "<a href='close.php'>CERRAR SESION</a>";
-                }
-            ?>
-    </li>
+  <?php
+    session_start();
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+        $namex = $_SESSION['correo'];
+        echo "<a href='mi_perfil.php'>BIENVENIDO: <font color=#68D800>$namex</font></a>";
+        
+         $namex = $_SESSION['correo'];
+         echo "<a href='close.php'>CERRAR SESION</a>";
+    }
+    else{
+        echo ("<SCRIPT LANGUAGE='JavaScript'>
+        window.alert('Esta pagina es solo para usuarios registrados porfavor inicia sesion')
+        window.location.href='index.php';
+        </SCRIPT>");
+        exit;
+    }
+    $now = time(); // checking the time now when home page starts
+    if($now > $_SESSION['expire']){
+        session_destroy();
+        echo "<br/><br />" . "Su sesion a terminado, <a href='login.php'> Necesita Hacer Login</a>";
+        exit;
+    }
+?>
+   
   </header>
   <?php
     // Pequeña lógica para capturar la pagina que queremos abrir

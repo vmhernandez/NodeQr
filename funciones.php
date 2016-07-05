@@ -454,21 +454,24 @@ function ranking_mueblista(){
   
   function mostrar_datos_mueblista($rut){
       $conn=conectarse();
-      $SQL="SELECT nombre, correo, telefono, direccion FROM mueblista WHERE rut_mueblista='".$rut."'";
+      $SQL="SELECT foto, nombre, correo, telefono, direccion FROM mueblista WHERE rut_mueblista='".$rut."'";
       $result=mysql_query($SQL);
       while($row =mysql_fetch_array($result)){
       echo '
-          <div class="col-sm-8 col-md-9">
-          <input name="nombre" value='.$row[0].' class="form-control" type="text">
+          <div class="espacio">
+               <img width="127" height="127" class="img-responsive img-rounded center-block" src="paginas/Perfil/..'.$row[0].'" />
           </div>
           <div class="col-sm-8 col-md-9">
-            <input name="correo" value='.$row[1].' class="form-control" type="email">
+          <input name="nombre" value='.$row[1].' class="form-control" type="text">
           </div>
           <div class="col-sm-8 col-md-9">
-          <input name="telefono" value='.$row[2].' class="form-control" type="number">
+            <input name="correo" value='.$row[2].' class="form-control" type="email">
           </div>
           <div class="col-sm-8 col-md-9">
-            <input name="direccion" value='.$row[3].' class="form-control" type="text">
+          <input name="telefono" value='.$row[3].' class="form-control" type="number">
+          </div>
+          <div class="col-sm-8 col-md-9">
+            <input name="direccion" value='.$row[4].' class="form-control" type="text">
           </div>';
       }
         mysql_close();
@@ -494,6 +497,19 @@ function ranking_mueblista(){
       echo '
           <div class="col-sm-8 col-md-9">
           <input name="contrasena" value='.$row[0].' class="form-control" type="hidden">
+          </div>';
+      }
+        mysql_close();
+  }
+
+ function clave_administrador($correo){
+      $conn=conectarse();
+      $SQL="SELECT contrasena FROM administrador WHERE correo='".$correo."'";
+      $result=mysql_query($SQL);
+      while($row =mysql_fetch_array($result)){
+      echo '
+          <div class="col-sm-8 col-md-9">
+          <input name="contrasena3" value='.$row[0].' class="form-control" type="hidden">
           </div>';
       }
         mysql_close();
@@ -551,18 +567,22 @@ function modificar_pass_usuario($correo,$contrasena){
   }
 function mostrar_datos_usuario($correo){
       $conn=conectarse();
-      $SQL="SELECT nombre, apellido FROM usuario WHERE correo='".$correo."'";
+      $SQL="SELECT foto, nombre, apellido FROM usuario WHERE correo='".$correo."'";
       $result=mysql_query($SQL);
       while($row =mysql_fetch_array($result)){
       echo '
-          <div class="col-sm-8 col-md-9">
-          <input name="nombre" value='.$row[0].' class="form-control" type="text">
+      <div class="col-sm-12 col-md-12">
+          <div class="espacio">
+               <img width="127" height="127" class="img-responsive img-rounded center-block" src="paginas/Perfil/..'.$row[0].'" />
           </div>
-          <div class="col-sm-8 col-md-9">
-            <input name="apellido" value='.$row[1].' class="form-control" type="text">
-          </div>';
+          <div class="col-sm-6 col-md-6 espacio">
+                <input name="nombre" value='.$row[1].' class="form-control" type="text">
+          </div>
+          <div class="col-sm-6 col-md-6 espacio">
+                <input name="apellido" value='.$row[2].' class="form-control" type="text">
+          </div>
+    </div>';
       }
         mysql_close();
   }
-
 ?>

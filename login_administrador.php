@@ -2,8 +2,7 @@
 <script src="js/jquery-1.12.4.min.js"></script>
 <script src="js/jquery.validate.js"></script>
 <script>
-        $(document).ready(function() {
-    
+    $(document).ready(function() {
     $("#formAdmin").validate({
         rules:{
             contrasena:{
