@@ -2,6 +2,16 @@
     include "paginas/funciones.php";
     require_once 'header.php';
 ?>
+<?php
+            $id_sticker=$_POST['txtCodigo'];
+            $resultado = consultar_mueble($id_sticker);
+            if($resultado == true){
+            //CONTINUA
+                }else{
+                }
+?>
+      
+      
        
     <div class="container col-md-12">
            

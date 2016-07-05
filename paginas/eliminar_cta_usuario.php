@@ -43,16 +43,17 @@ function confirmar()
 <div class="col-md-8 col-sm-8 espacio principal">
 
     <form action="<?php echo $pagina == 'agregar_sticker_mueblista' ?>" method="post" onsubmit="return confirmar()" id="validar">
-      <?php
-      clave_usuario($namex)
-      ?>
+
       <label class="col-sm-4 col-md-3 control-label espacio">Contraseña(*)</label>        
-        <div class="col-sm-8 col-md-9"><input class="form-control espacio" name="rcontrasena"  type="password"/></div>
-      <div class="col-sm-12 col-md-12">
-        <input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="guardar" id="guardar" value="Eliminar cuenta"/>
+        
+      <div class="col-sm-8 col-md-9"><input class="form-control espacio" name="rcontrasena"  type="password"/></div>
+      
+      <div class="col-sm-12 col-md-12"><input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="guardar" id="guardar" value="Eliminar cuenta"/>
       </div>
                    
     </form>
+       
+      <?php clave_usuario($namex)?>
 </div>
 
     <?php

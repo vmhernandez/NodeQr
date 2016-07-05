@@ -185,7 +185,8 @@ function setwebcam()
         },
         messages:{
             txtCodigo:{
-                required:"Campo obligatorio"
+                required:"Campo obligatorio",
+                number:"Debe ingresar solo numeros"
             },
             foto:{
                 required:"Campo obligatorio"
