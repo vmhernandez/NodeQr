@@ -596,4 +596,6 @@ function mostrar_datos_usuario($correo){
       }
         mysql_close();
   }
+
+
 ?>

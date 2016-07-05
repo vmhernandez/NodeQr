@@ -98,6 +98,9 @@ function confirmar()
                 }else{
                     $resultado = agregar_madera($nombre,$empresa,$uso,$descripcion);
                     if($resultado == true){
+                     echo'<script language="javascript">
+                     alert("Madera ingresada correctamente");
+                     </script>';
                     }
                     //Redireccionar                   
                 header ("Location:");

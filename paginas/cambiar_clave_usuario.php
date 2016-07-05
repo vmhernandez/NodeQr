@@ -46,7 +46,7 @@ $(document).ready(function() {
     
 function confirmar()
 {
-	if(confirm('¿Estas seguro desea agregar la madera'))
+	if(confirm('¿Estas seguro desea cambiar la contraseña'))
 		return true;
 	else
 		return false;
@@ -55,7 +55,7 @@ function confirmar()
 
 <div class="col-md-8 col-sm-8 espacio principal">
 
-    <form action="<?php echo $pagina == 'agregar_sticker_mueblista' ?>" method="post" id="validar">
+    <form action="<?php echo $pagina == 'agregar_sticker_mueblista' ?>" method="post" onsubmit="return confirmar()" id="validar">
       
       <label class="col-sm-4 col-md-3 control-label espacio">Ingresar contraseña antigua</label>
               

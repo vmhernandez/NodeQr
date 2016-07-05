@@ -206,7 +206,7 @@ function setwebcam()
     
     function confirmar()
     {
-	if(confirm('¿Estas seguro desea agregar al administrador'))
+	if(confirm('¿Estas seguro desea agregar el mueble'))
 		return true;
 	else
 		return false;
@@ -225,7 +225,7 @@ function setwebcam()
                 <canvas id="qr-canvas" width="200" height="200"></canvas>
                 <script type="text/javascript">load();</script>
                 
-                <form class="form-horizontal" method="post" action="<?php echo $pagina == 'mis_muebles' ?>" enctype="multipart/form-data" id="validar">
+                <form class="form-horizontal" method="post" action="<?php echo $pagina == 'mis_muebles' ?>" onsubmit="return confirmar()" enctype="multipart/form-data" id="validar">
                 
                 <div class="col-sm-12">
                 <input id="codigo" type="text" name="txtCodigo" class="form-control espacio">
@@ -273,6 +273,9 @@ function setwebcam()
                 }else{
                     $resultado = agregar_mueble($correo, $id_sticker,$foto,$calificacion,$tipo);
                     if($resultado == true){
+                     echo'<script language="javascript">
+                     alert("Mueble ingresado");
+                     </script>';
                     }
                 header ("Location:");
                 }

@@ -2,12 +2,17 @@
   require_once 'header.php';
   include "funciones.php";  
 ?>
+
+
+<link rel="stylesheet" href="estiloValidacion.css">
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script>
+
 <div class="col-md-8 col-sm-8 espacio principal">
 
     <form action="<?php echo $pagina == 'agregar_sticker_mueblista' ?>" method="post">
-      <?php
-      mostrar_datos_usuario($namex)
-      ?>
+      <?php mostrar_datos_usuario($namex)?>
       <div class="col-sm-12 col-md-12">
         <input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="guardar" id="guardar" value="Guardar"/>
       </div>

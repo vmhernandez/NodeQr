@@ -70,7 +70,7 @@ return this.optional(element) || /^[a-záéóóúàèìòùäëïöüñ\s]+$/i.t
     
 function confirmar()
 {
-	if(confirm('¿Estas seguro desea agregar al administrador'))
+	if(confirm('¿Estas seguro desea agregar al Mueblista'))
 		return true;
 	else
 		return false;
@@ -78,7 +78,7 @@ function confirmar()
 </script>
 
 <div class="col-md-8 col-sm-8 espacio principal">
-            <form action="<?php echo $pagina == 'agregar_sticker' ?>" method="post" id="validar">
+            <form action="<?php echo $pagina == 'agregar_sticker' ?>" method="post" onsubmit="return confirmar()" id="validar">
                
                 <label class="col-sm-4 col-md-3 control-label espacio">Rut(*)</label>
                  
@@ -124,9 +124,15 @@ function confirmar()
                 $direccion=$_POST['direccion'];
 
                 if (($rut_mueblista == "")|| ($nombre=="")||(strlen($rut_mueblista)>8)||(strlen($nombre)>30)||(strlen($telefono)!=9)||(strlen($direccion)>50)||(strlen($correo)>30)){
+                    echo'<script language="javascript">
+                     alert("Datos incorectos");
+                     </script>';
                 }else{
                     $resultado = agregar_mueblista($rut_mueblista, $nombre, $correo, $telefono, $direccion);
                     if($resultado == true){
+                    echo'<script language="javascript">
+                     alert("Mueblista ingresado correctamente");
+                     </script>';
                     }
                      //Redireccionar                   
                 header ("Location:");
