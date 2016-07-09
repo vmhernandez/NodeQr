@@ -2,24 +2,36 @@
   require_once 'head.php';
   include "funciones.php";  
 ?>
-<div class="col-md-8 col-sm-8 espacio principal">
-
-    <form action="<?php echo $pagina == 'agregar_sticker_mueblista' ?>" method="post">
-      <?php
-      clave_mueblista($namex)
-      ?>
-      <label class="col-sm-4 col-md-3 control-label espacio">Ingresar contraseña antigua(*)</label>        
-        <div class="col-sm-8 col-md-9"><input class="form-control espacio" name="rcontrasena"  type="password"/></div>
-      <label class="col-sm-4 col-md-3 control-label espacio">Ingresar nueva contraseña(*)</label>        
-        <div class="col-sm-8 col-md-9"><input class="form-control espacio" name="ncontrasena"  type="password"/></div>
-      <label class="col-sm-4 col-md-3 control-label espacio">Reingresar nueva contraseña(*)</label>        
-        <div class="col-sm-8 col-md-9"><input class="form-control espacio" name="rncontrasena"  type="password"/></div>
-      <div class="col-sm-12 col-md-12">
-        <input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="guardar" id="guardar" value="Modificar clave"/>
-      </div>
-                   
-    </form>
-</div>
+<form class="formulario" action="<?php echo $pagina == 'agregar_sticker_mueblista' ?>" method="post">
+   <div class="row">
+            <?php
+                clave_mueblista($namex)
+            ?>
+    </div>
+    <div class="row">
+       <label class="col-sm-4 col-md-3 control-label espacio">Contraseña antigua</label>    
+        <div class="col-sm-8 col-md-9">
+            <input class="form-control" name="rcontrasena"  type="password"/>
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-sm-4 col-md-3 control-label espacio">Nueva contraseña</label>   
+        <div class="col-sm-8 col-md-9">
+            <input class="form-control" name="ncontrasena"  type="password"/>
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-sm-4 col-md-3 control-label">Confirmar contraseña</label>   
+        <div class="col-sm-8 col-md-9">
+            <input class="form-control" name="rncontrasena"  type="password"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <input class="botonesSubmit btn-block" type="submit" name="guardar" id="guardar" value="Modificar clave"/>
+        </div>
+    </div>
+</form>
 
     <?php
             if(isset($_POST['guardar'])){

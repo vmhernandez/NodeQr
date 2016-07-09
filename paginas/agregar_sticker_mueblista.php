@@ -50,30 +50,26 @@
       ventimp.close();
     }
   </script>
-
-
-  <div class="col-md-8 col-sm-8 espacio principal">
-      <?php echo '<img class ="center-block espacio" src="'.$PNG_WEB_DIR.basename($filename).' "/>';?>
-
-        <form class="form-horizontal" method="post">
-
-          <div class="center-block espacio col-md-4 col-sm-4">
+<form class="formulario" method="post">
+        <div class="row">
+           <div class="col-xs-12">
+                <?php echo '<img class="center-block" src="'.$PNG_WEB_DIR.basename($filename).' "/>';?>
+            </div>
+        </div>
+        <div>
             <?php id() ?>
-          </div>
-
-    <div class="col-md-12">
-
-      <div class="col-sm-6 col-md-6">
-        <input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="registrar" value="GENERAR QR">
-        </br>
-      </div>
-      
-      <div class="col-sm-6 col-md-6">
-        <?php echo '<a class="btn btn-primary btn-lg btn-block espacio" href="'.$PNG_WEB_DIR.basename($filename).' " download>Descargar<a/>';?>
-        </br>
-      </div>
-    </div>
-    </form>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <input class="botonesSubmit btn-block" type="submit" name="registrar" value="Generar Qr">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <?php echo '<a class="botonesSubmit btn-block" href="'.$PNG_WEB_DIR.basename($filename).' " download>Descargar<a/>';?>
+            </div>
+        </div>
+</form>
 
 
 
@@ -90,6 +86,3 @@ if(isset($_POST['registrar']) ){
         alert("Codigo generado correctamente");
         </script>'; 
      ;}?>
-
-
-  </div>

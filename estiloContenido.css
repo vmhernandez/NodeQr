@@ -1,3 +1,10 @@
+.aer {
+    margin-top: 20px:
+}
+.formulario img {
+    margin-bottom: 20px;
+    background: red;
+}
 .consultaqr{
     text-align: center;
     margin: 0px auto;
@@ -15,6 +22,7 @@
         width: 100%;
         border: 2px solid white;
         border-radius: 10px;
+        max-width: 500px;
     }
 
 .codigo {

@@ -494,10 +494,9 @@ function ranking(){
       $SQL="SELECT contrasena FROM mueblista WHERE rut_mueblista='".$rut."'";
       $result=mysql_query($SQL);
       while($row =mysql_fetch_array($result)){
-      echo '
-          <div class="col-sm-8 col-md-9">
-          <input name="contrasena" value='.$row[0].' class="form-control" type="hidden">
-          </div>';
+      echo '<div class="col-xs-12">
+                <input name="contrasena" value='.$row[0].' class="form-control" type="hidden">
+            </div>';
       }
         mysql_close();
   }
@@ -582,16 +581,25 @@ function mostrar_datos_usuario($correo){
       $SQL="SELECT foto, nombre, apellido FROM usuario WHERE correo='".$correo."'";
       $result=mysql_query($SQL);
       while($row =mysql_fetch_array($result)){
-      echo '
-           <div class="col-sm-12 col-md-12">
-              <img width="127" height="127" class="img-responsive img-rounded" src="paginas/Perfil/..'.$row[0].'" />
+      echo '<div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <img width="127" height="127" class="img-responsive img-rounded center-block" src="paginas/Perfil/..'.$row[0].'" />
+                </div>
             </div>
-          <div class="col-sm-8 col-md-9">
-          <input name="nombre" value='.$row[1].' class="form-control" type="text">
-          </div>
-          <div class="col-sm-8 col-md-9">
-            <input name="apellido" value='.$row[2].' class="form-control" type="text">
-          </div>';
+            
+            <div class="row">
+                <label class="col-sm-4 col-md-3 control-label">Editar nombre</label> 
+                <div class="col-sm-8 col-md-9">
+                    <input name="nombre" value='.$row[1].' class="form-control" type="text">
+                </div>
+            </div>
+            
+            <div class="row">
+                <label class="col-sm-4 col-md-3 control-label">Editar Apellido</label>
+                <div class="col-sm-8 col-md-9">
+                    <input name="apellido" value='.$row[2].' class="form-control" type="text">
+                </div>
+            </div>';
       }
         mysql_close();
   }

@@ -2,6 +2,7 @@
     include "paginas/funciones.php";
     require_once 'head.php';
 ?>
+       <head>
         <script> // QRCODE reader Copyright 2011 Lazar Laszlo
 // http://www.webqr.com
 
@@ -213,53 +214,57 @@ function setwebcam()
     
     </script>
 
-           
-            <div class="col-md-8 espacio principal">
-                <div style="display:none" id="result"></div>
-	            <div class="selector" id="webcamimg" onclick="setwebcam()" align="left" ></div>
-                <div class="selector" id="qrimg" onclick="setimg()" align="right" ></div>
-                <center id="mainbody"><div id="outdiv"></div></center>
-                
-                <canvas id="qr-canvas" width="200" height="200"></canvas>
-                <script type="text/javascript">load();</script>
-                
-                <form class="form-horizontal" method="post" action="<?php echo $pagina == 'mis_muebles' ?>" onsubmit="return confirmar()" enctype="multipart/form-data" id="validar">
-                
-                <div class="col-sm-12">
-                <input id="codigo" type="text" name="txtCodigo" class="form-control espacio">
-                </div>
-                
-                <label class="col-sm-4 col-md-3 control-label espacio">foto</label>
-                
-                 <div class="col-sm-8 col-md-9"><input name="foto" type="file" class="form-control espacio" ></div>
-                
-                <label class="col-sm-4 col-md-3 control-label espacio">Tipo</label>
-                
-                <div class="col-sm-8 col-md-9 ">
-                    <select name="tipo" class=" form-control espacio">
-                        <option value="Cocina">Cocina</option>
-                        <option value="Baño">Baño</option> 
-                        <option value="Comedor">Comedor</option>
-                        <option value="Dormitorio">Dormitorio</option>
-                        </select>
-                </div>
-                
-                <label class="col-sm-4 col-md-3 control-label espacio">Calificacion</label>
-                
-                <div class="col-sm-8 col-md-9">
+</head>
+<div class="formulario">
+    <div style="display:none" id="result"></div>
+    <div class="selector" id="webcamimg" onclick="setwebcam()" align="left" ></div>
+    <div class="selector" id="qrimg" onclick="setimg()" align="right" ></div>
+    <center id="mainbody"><div id="outdiv"></div></center>
+    <canvas id="qr-canvas" width="200" height="200"></canvas>
+    <script type="text/javascript">load();</script>
+    <form method="post" action="<?php echo $pagina == 'mis_muebles' ?>" onsubmit="return confirmar()" enctype="multipart/form-data" id="validar">
+       <div class="row">
+           <label class="col-sm-4 col-md-3">Código leído</label>
+            <div class="col-sm-8 col-md-9">
+                <input id="codigo" type="text" name="txtCodigo" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-sm-4 col-md-3 control-label">Adjuntar foto</label>
+            <div class="col-sm-8 col-md-9">
+                <input name="foto" type="file" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-sm-4 col-md-3 control-label espacio">Tipo</label>
+            <div class="col-sm-8 col-md-9 ">
+                <select name="tipo" class=" form-control espacio">
+                <option value="Cocina">Cocina</option>
+                <option value="Baño">Baño</option> 
+                <option value="Comedor">Comedor</option>
+                <option value="Dormitorio">Dormitorio</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-sm-4 col-md-3 control-label espacio">Calificación</label>
+            <div class="col-sm-8 col-md-9">
                 <select name="calificacion" class="form-control espacio">
-                        <option value="1">1</option>
-                        <option value="2">2</option> 
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        </select>
-                </div>
-                  
-                <div class="col-sm-12 col-md-12"><input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="guardar" id="guardar" value="Guardar" /></div>
-            </form>
-        </table>
-    </body>
+                <option value="1">1</option>
+                <option value="2">2</option> 
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <input class="botonesSubmit btn-block" type="submit" name="guardar" id="guardar" value="Guardar" />
+            </div>
+        </div>
+    </form>
+</div>
          <?php
             if(isset($_POST['guardar'])){
                 $correo=$_SESSION['correo'];

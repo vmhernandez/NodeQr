@@ -2,19 +2,16 @@
   require_once 'head.php';
   include "funciones.php";  
 ?>
-<div class="col-md-8 col-sm-8 espacio principal">
-
-    <form action="<?php echo $pagina == 'agregar_sticker_mueblista' ?>" method="post">
-      <?php
-      mostrar_datos_mueblista($namex)
-      ?>
-      <div class="col-sm-12 col-md-12">
-        <input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="guardar" id="guardar" value="Guardar"/>
-      </div>
-                   
-    </form>
-</div>
-
+<form class="formulario" action="<?php echo $pagina == 'agregar_sticker_mueblista' ?>" method="post">
+    <?php
+        mostrar_datos_mueblista($namex)
+    ?>
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <input class="botonesSubmit btn-block" type="submit" name="guardar" id="guardar" value="Guardar"/>
+        </div>
+    </div>
+</form>
     <?php
             if(isset($_POST['guardar'])){
                 $rut_mueblista=$namex;
