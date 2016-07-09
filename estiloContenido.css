@@ -1,8 +1,63 @@
+.consultaqr{
+    text-align: center;
+    margin: 0px auto;
+}
 
+    #qr-canvas{
+        display:none;
+    }
+
+    #outdiv{
+        padding-top: 0px;
+    }
+
+    #v{
+        width: 100%;
+        border: 2px solid white;
+        border-radius: 10px;
+    }
+
+.codigo {
+    margin-top: 50px;
+}
 .contenido {
-    max-width: 1000px;
-    margin: 0 auto;
-    background: blue;
+    border: 1px solid white;
+    overflow: hidden;
+}
+.formulario {
+    padding: 20px;
+}
+.formulario input {
+    font-family: 'Montserrat';
+    margin-bottom: 20px;
+}
+.formulario select {
+    margin-bottom: 20px;
+}
+
+.formulario label {
+    color: white;
+}
+.formulario a {
+    text-decoration: none;
+    font-family: 'Montserrat';
+    text-align: center;
+}
+.formulario a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+
+.botonesSubmit { 
+    background: rgb(50,69,84);
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+}
+.botonesSubmit:hover {
+    background: #17964F;
 }
 
 #wrapper {
@@ -25,7 +80,6 @@
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #000;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -41,7 +95,7 @@
     width: 100%;
     position: absolute;
     padding: 15px;
-    background: red;
+    background: #406661;
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -83,22 +137,11 @@
     text-decoration: none;
 }
 
-.sidebar-nav > .sidebar-brand {
-    height: 65px;
-    font-size: 18px;
-    line-height: 60px;
-}
-
-.sidebar-nav > .sidebar-brand a {
-    
-}
-
-.sidebar-nav > .sidebar-brand a:hover {
-    
-    background: none;
-}
-
 @media(min-width:768px) {
+    .formulario {
+        padding: 100px;
+            }
+    
     #wrapper {
         padding-left: 250px;
     }
@@ -124,4 +167,12 @@
         position: relative;
         margin-right: 0;
     }
+
+.contenido {
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 1px solid white;
+    overflow: hidden;
+}
+
 }

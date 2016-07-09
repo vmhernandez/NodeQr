@@ -6,6 +6,10 @@
 .cuerpo {
 
     background-image: radial-gradient(circle farthest-corner at center, #3C4B57 0%, #1C262B 100%);
+<<<<<<< HEAD
+=======
+   /* overflow: hidden;*/
+>>>>>>> origin/master
 }
 
 /*HEADER*/
@@ -13,14 +17,18 @@
     float: left;
 }
 
-.contLetra a{
-    text-decoration: none;
-    font-size: 60px;
+.contLetra a {
+    font-size: 50px;
+    font-weight: bold;
     font-family: 'Poiret One';
+<<<<<<< HEAD
     text-align: center;
     color: #fff;
+=======
+    color: white;
+>>>>>>> origin/master
 }
-.letra:hover {
+.contLetra a:hover {
     cursor: pointer;
     text-decoration: none;
     color: white;

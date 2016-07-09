@@ -90,8 +90,8 @@
                     </div>
                     <div class="col-xs-12 col-sm-6 iContenido2">
                      <video autoplay loop>
-    <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm">
-<source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
+                     <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm">
+                     <source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
 </video>
                     </div>
                 </div>   

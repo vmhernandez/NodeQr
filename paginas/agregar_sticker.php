@@ -40,61 +40,52 @@
     //config form
 ?>
 
-  <div class="col-md-8 col-sm-8 espacio principal">
-    <div id="imprimirqr" class="center-block">
-      <?php echo '<img class ="center-block espacio" src="'.$PNG_WEB_DIR.basename($filename).' "/>';?>
-
-        <form class="form-horizontal" method="post">
-
-          <div class="col-md-4 col-sm-4"></div>
-          <div class="center-block espacio col-md-4 col-sm-4">
-            <?php id()
-              ?>
-          </div>
-          <div class="col-md-4 col-sm-4"></div>
-    </div>
-    <div class="col-md-12">
-
-      <label class="col-sm-4 col-md-3 control-label espacio">Rut mueblista </label>
-      <div class="col-sm-8 col-md-9">
-        <select name="rut" class="form-control espacio">
-          <?php listar_mueblistas()?>
-        </select>
-      </div>
-
-      <label class="col-sm-4 col-md-3 control-label espacio">Codigo madera</label>
-      <div class="col-sm-8 col-md-9">
-        <select name="codigo" class="form-control espacio">
-          <?php listar_madera()?>
-        </select>
-      </div>
-
-      <div class="col-sm-6 col-md-6">
-        <input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="registrar" value="GENERAR QR">
-        </br>
-      </div>
-      <div class="col-sm-6 col-md-6">
-        <?php echo '<a class="btn btn-primary btn-lg btn-block espacio" href="'.$PNG_WEB_DIR.basename($filename).' " download>Descargar<a/>';?>
-        </br>
-      </div>
-    </div>
+<div id="imprimirqr" class="center-block">
+    <?php echo '<img class ="codigo center-block" src="'.$PNG_WEB_DIR.basename($filename).' "/>';?>
+    <form class="formulario" method="post">
+        <div>
+        <?
+            php id()
+        ?>
+        </div>
+        <div class="row">
+            <label class="col-sm-4 col-md-3 control-label">Nombre mueblista </label>
+            <div class="col-sm-8 col-md-9">
+                <select name="rut" class="form-control">
+                    <?php listar_mueblistas()?>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-sm-4 col-md-3 control-label espacio">Codigo madera</label>
+            <div class="col-sm-8 col-md-9">
+                <select name="codigo" class="form-control espacio">
+                    <?php listar_madera()?>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <input class="botonesSubmit btn-block" type="submit" name="registrar" value="Generar Qr">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <?php echo '<a class="botonesSubmit btn-block" href="'.$PNG_WEB_DIR.basename($filename).' " download>Descargar<a/>';?>
+            </div>
+        </div>
     </form>
-
-
-
     <?php
-if(isset($_POST['registrar']) ){
-        conectarse();
-        $id =  $_POST['id'];
-        $rut = $_POST['rut'];
-        $codigo = $_POST['codigo'];
-        $query = "INSERT INTO  sticker (id_sticker,rut_mueblista,id_madera) 
-        VALUES ('".$id."','".$rut."','".$codigo."')";
-        $result = mysql_query($query)or die(mysql_error());
-        echo '<script language="javascript">
-        alert("Codigo generado correctamente");
-        </script>';
-}?>
-
-
-  </div>
+    if(isset($_POST['registrar']) ){
+            conectarse();
+            $id =  $_POST['id'];
+            $rut = $_POST['rut'];
+            $codigo = $_POST['codigo'];
+            $query = "INSERT INTO  sticker (id_sticker,rut_mueblista,id_madera) 
+            VALUES ('".$id."','".$rut."','".$codigo."')";
+            $result = mysql_query($query)or die(mysql_error());
+            echo '<script language="javascript">
+            alert("Codigo generado correctamente");
+            </script>';
+    }?>
+</div>

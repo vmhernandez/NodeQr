@@ -45,42 +45,34 @@ function confirmar()
 }
 </script>
 
-
-<div class="col-md-8 col-sm-8 espacio principal">
-            
-        <form action="<?php echo $pagina == 'agregar_sticker' ?>" method="post" onsubmit="return confirmar()" id="validar">
-                
-            <label class="col-sm-12 col-md-12 control-label espacio">Ingresar el correo del administrador que desea agregar</label>    
-                
-            <label class="col-sm-4 col-md-3 control-label espacio">Correo </label>    
-            
+<form class="formulario" action="<?php echo $pagina == 'agregar_sticker' ?>" method="post" onsubmit="return confirmar()" id="validar">
+        <div class="row">
+            <label class="col-sm-4 col-md-3 control-label espacio">Correo administrador</label>    
             <div class="col-sm-8 col-md-9">
-            <input class="form-control espacio" name="correo" type="email" id="correo">
+                <input class="form-control" name="correo" type="email" id="correo">
             </div>
-                   
-            <label class="col-sm-12 col-md-12 control-label espacio">Ingresar contraseña del nuevo administrador </label> 
-                    
-            <label class="col-sm-4 col-md-3 control-label espacio">Contraseña</label>
-            
-            <div class="col-sm-8 col-md-9">
-            <input class="form-control espacio" name="contrasena" id="contrasena" type="password"></div>
-            
-
-            <label class="col-sm-12 col-md-12 control-label espacio">Para confirmar la baja del nuevo administrador, por favor ingresar su contraseña y luego dar click en guardar</label>
-            
-            <div class="col-sm-12 col-md-12">
-            <input class="form-control espacio" name="contrasena2" type="password"></div>
-               
-            <div class="col-sm-12 col-md-12">
-            <?php clave_administrador($namex)?>
-            </div>
-               
-            <div class="col-sm-12 col-md-12">
-            <input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="guardar" value="Guardar" />
-            </div>
-            
-            </form>
         </div>
+        <div class="row">
+            <label class="col-sm-4 col-md-3 control-label">Contraseña</label>
+            <div class="col-sm-8 col-md-9">
+                <input class="form-control" name="contrasena" id="contrasena" type="password">
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-sm-4 col-md-3 control-label">Su contraseña</label>
+            <div class="col-sm-8 col-md-9">
+                <input class="form-control espacio" name="contrasena2" type="password">
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12">
+            <?php clave_administrador($namex)?>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <input class="botonesSubmit btn-block" type="submit" name="guardar" value="Agregar" />
+            </div>
+        </div>
+</form>
 
          <?php
     

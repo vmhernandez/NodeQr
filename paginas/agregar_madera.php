@@ -54,39 +54,42 @@ function confirmar()
 		return false;
 }
 </script>
+<form class="formulario" action="<?php echo $pagina == 'agregar_sticker' ?>" onsubmit="return confirmar()" method="post" id="validar">
+   <div class="row">
+        <label class="col-sm-4 col-md-3 control-label espacio">Nombre</label>
+        <div class="col-sm-8 col-md-9">
+            <input class="form-control" name="nombre" id="nombre"/>
+        </div>
+    </div>
+    <div class="row">
+    <label class="col-sm-4 col-md-3 control-label espacio">Empresa</label>
+        <div class="col-sm-8 col-md-9">
+            <input class="form-control espacio" name="empresa" id="empresa"/>
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-sm-4 col-md-3 control-label espacio">Uso</label>
+        <div class="col-sm-8 col-md-9 ">
+            <select id="uso" name="uso" class=" form-control espacio">
+                <option value="Construccion/interior">Construccion/interior</option>
+                <option value="Mobiliario">Mobiliario</option>
+                <option value="Revestimiento">Revestimiento</option>
+            </select>
+        </div>
+    </div>      
+    <div class="row">
+        <label class="col-sm-4 col-md-3 control-label espacio">Descripción</label>
+        <div class="col-sm-8 col-md-9">
+            <input id="descripcion" class="form-control espacio" name="descripcion"/>
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-xs-12">
+        <input class="botonesSubmit btn-block" type="submit" name="guardar" id="guardar" value="Agregar" />
+    </div>
+    </div>
+</form>
 
-<div class="col-md-8 col-sm-8 espacio principal">
-            <form action="<?php echo $pagina == 'agregar_sticker' ?>" onsubmit="return confirmar()" method="post" id="validar">
-              
-                <label class="col-sm-4 col-md-3 control-label espacio">Nombre</label>
-                
-                <div class="col-sm-8 col-md-9"><input class="form-control espacio" name="nombre" id="nombre"/></div>
-                
-                <label class="col-sm-4 col-md-3 control-label espacio">Empresa</label>
-                
-                <div class="col-sm-8 col-md-9"><input class="form-control espacio" name="empresa" id="empresa"/></div>
-                
-                 <label class="col-sm-4 col-md-3 control-label espacio">Uso</label>
-
-                <div class="col-sm-8 col-md-9 ">
-                    <select id="uso" name="uso" class=" form-control espacio">
-                            <option value="Construccion/interior">Construccion/interior</option>
-                            <option value="Mobiliario">Mobiliario</option>
-                            <option value="Revestimiento">Revestimiento</option>
-                        </select>
-                </div>       
-                
-                <label class="col-sm-4 col-md-3 control-label espacio">Descripcion</label>
-                
-                <div class="col-sm-8 col-md-9"><input id="descripcion" class="form-control espacio" name="descripcion"/></div>
-               
-                <div class="col-sm-12 col-md-12"><input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="guardar" id="guardar" value="Guardar" /></div>
-                
-                
-                
-                
-            </form>
-</div>
          <?php
             if(isset($_POST['guardar'])){
                 $nombre=$_POST['nombre'];
