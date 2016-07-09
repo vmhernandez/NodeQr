@@ -14,13 +14,9 @@
  <div class="cont1 col-md-5 col-sm-12 col-xs-12  ">
  <div class="cuadro altura">
       <ul class="nav nav-tabs nav-justified">
-      <li class="<?php echo $pagina == 'login_cliente' ? 'active' : ''; ?>"><a href="?p=login_cliente">Usuario</a>
+      
+      <li class="<?php echo $pagina == 'login_universal' ? 'active' : ''; ?>"><a href="?p=login_universal">universal</a>
       </li>
-
-      <li class="<?php echo $pagina == 'login_mueblista' ? 'active' : ''; ?>"><a href="?p=login_mueblista">Mueblista</a>
-      </li>
-
-      <li class="<?php echo $pagina == 'login_administrador' ? 'active' : ''; ?>"><a href="?p=login_administrador">Administrador</a>
-      </li>
+      
 
    </ul> 

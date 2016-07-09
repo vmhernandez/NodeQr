@@ -1,7 +1,7 @@
 <?php
     // Pequeña lógica para capturar la pagina que queremos abrir
     // El fragmento de html que contiene la cabecera de nuestra web
-    $pagina = isset($_GET['p']) ? strtolower($_GET['p']) : 'login_cliente';
+    $pagina = isset($_GET['p']) ? strtolower($_GET['p']) : 'login_universal';
     require_once 'header.php';
     require_once 'inicio.php';
 

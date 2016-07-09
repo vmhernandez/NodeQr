@@ -223,9 +223,9 @@ include "conexion.php" ;
     }
 
     ////////ELIMINAR MADERA//////////////
-    function eliminar_madera($codigo){
+    function eliminar_madera($id_madera){
         $conn=conectarse();
-        $SQL="DELETE FROM madera WHERE id_madera='".$codigo."'";
+        $SQL="DELETE FROM madera WHERE id_madera='".$id_madera."'";
         if(mysql_query($SQL)){
             return true;
         }else{
@@ -258,21 +258,10 @@ include "conexion.php" ;
         mysql_close();
     }
 
-    //////LISTAR MUEBLISTAS sin clave//////////
-    function listar_mueblistas_sc(){
-        $conn=conectarse();
-        $SQL="SELECT rut_mueblista,nombre FROM mueblista WHERE contrasena IN ('') ORDER BY rut_mueblista";
-        $result=mysql_query($SQL);
-        while($row = mysql_fetch_array($result)){
-            echo '<option value="'.$row[0].'">'.$row[0].' - '.$row[1].'</option>';
-        }
-        mysql_close();
-    }
-
     //////LISTAR MADERA//////////
     function listar_madera(){
         $conn=conectarse();
-        $SQL="SELECT id_madera, nombre FROM madera WHERE id_madera NOT IN (0) ORDER BY id_madera";
+        $SQL="SELECT id_madera,nombre FROM madera ORDER BY id_madera";
         $result=mysql_query($SQL);
         while($row = mysql_fetch_array($result)){
             echo '<option value="'.$row[0].'">'.$row[1].'</option>';
@@ -383,13 +372,13 @@ function apellido_usuario($correo){
 
 function listar_muebles_mueblista($rut_mueblista){
     $conn=conectarse();
-    $SQL="SELECT correo,tipo, calificacion FROM mueble JOIN sticker USING (id_sticker) WHERE sticker.rut_mueblista='".$rut_mueblista."'";
+    $SQL="SELECT correo,tipo, calificacion,foto FROM mueble JOIN sticker USING (id_sticker) WHERE sticker.rut_mueblista='".$rut_mueblista."'";
      $result=mysql_query($SQL);
         while($row=mysql_fetch_array($result)){
             echo '
             <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="col-md-4 col-sm-4 col-xs-4">
-            <img src="img/mueble.png" class="img-responsive img-rounded">
+            <img class="img-responsive img-rounded" src="paginas/Imagenes/..'.$row[3].'" />
             </div>
             <ul class="list-group col-md-8 col-sm-8 col-xs-8">
                   <li class="list-group-item">'.$row[0].' </li>
@@ -398,7 +387,6 @@ function listar_muebles_mueblista($rut_mueblista){
             </ul>
           </div>';
         }
-       //<li><img src="'.$row[0].'"></li>
     mysql_close();
   }
 
@@ -607,5 +595,6 @@ function mostrar_datos_usuario($correo){
       }
         mysql_close();
   }
+
 
 ?>

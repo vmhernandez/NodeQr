@@ -228,9 +228,9 @@ include "conexion.php" ;
     }
 
     ////////ELIMINAR MADERA//////////////
-    function eliminar_madera($codigo){
+    function eliminar_madera($id_madera){
         $conn=conectarse();
-        $SQL="DELETE FROM madera WHERE id_madera='".$codigo."'";
+        $SQL="DELETE FROM madera WHERE id_madera='".$id_madera."'";
         if(mysql_query($SQL)){
             return true;
         }else{
@@ -263,21 +263,10 @@ include "conexion.php" ;
         mysql_close();
     }
 
- //////LISTAR MUEBLISTAS sin clave//////////
-    function listar_mueblistas_sc(){
-        $conn=conectarse();
-        $SQL="SELECT rut_mueblista,nombre FROM mueblista WHERE contrasena IN ('') ORDER BY rut_mueblista";
-        $result=mysql_query($SQL);
-        while($row = mysql_fetch_array($result)){
-            echo '<option value="'.$row[0].'">'.$row[0].' - '.$row[1].'</option>';
-        }
-        mysql_close();
-    }
-
     //////LISTAR MADERA//////////
     function listar_madera(){
         $conn=conectarse();
-        $SQL="SELECT id_madera, nombre FROM madera WHERE id_madera NOT IN (0) ORDER BY id_madera";
+        $SQL="SELECT id_madera,nombre FROM madera ORDER BY id_madera";
         $result=mysql_query($SQL);
         while($row = mysql_fetch_array($result)){
             echo '<option value="'.$row[0].'">'.$row[1].'</option>';
@@ -596,6 +585,7 @@ function mostrar_datos_usuario($correo){
       }
         mysql_close();
   }
+
 
 
 ?>

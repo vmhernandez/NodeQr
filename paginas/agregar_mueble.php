@@ -179,14 +179,12 @@ function setwebcam()
                 required:true 
             }, 
             calificacion:{
-                required: true,
-                maxlength: 1
+                required: true
             }
         },
         messages:{
             txtCodigo:{
-                required:"Campo obligatorio",
-                number:"Debe ingresar solo numeros"
+                required:"Campo obligatorio"
             },
             foto:{
                 required:"Campo obligatorio"
@@ -195,8 +193,7 @@ function setwebcam()
                 required:"Campo obligatorio"
             },
             calificacion:{
-                required:"campo obligatorio",
-                maxlength:"la calificacion debe ser menor a 10"
+                required:"campo obligatorio"
             }
             
         }
@@ -250,7 +247,13 @@ function setwebcam()
                 <label class="col-sm-4 col-md-3 control-label espacio">Calificacion</label>
                 
                 <div class="col-sm-8 col-md-9">
-                <input id="calificacion" type="number" name="calificacion" class="form-control espacio">
+                <select name="calificacion" class="form-control espacio">
+                        <option value="1">1</option>
+                        <option value="2">2</option> 
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        </select>
                 </div>
                   
                 <div class="col-sm-12 col-md-12"><input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="guardar" id="guardar" value="Guardar" /></div>

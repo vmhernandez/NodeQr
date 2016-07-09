@@ -14,7 +14,7 @@
 
   <body>
     <div class="contenedor">
-          <h2>Muebles asociados</h2>
+          <h2 style="color:#fff;">Muebles asociados</h2>
           <?php
           if(isset($_POST['consulta'])){
           $rut_mueblista=$_POST['rut_mueblista'];
