@@ -76,44 +76,44 @@ function confirmar()
 		return false;
 }
 </script>
+<form class="formulario" action="<?php echo $pagina == 'agregar_sticker' ?>" method="post" onsubmit="return confirmar()" id="validar">
+   <div class="row">
+        <label class="col-sm-4 col-md-3 control-label espacio">Rut</label>
+        <div class="col-sm-8 col-md-9">
+            <input id="rut" class="form-control espacio" name="rut_mueblista" type="number">
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-sm-4 col-md-3 control-label">Nombre</label>
+        <div class="col-sm-8 col-md-9">
+            <input id="nombre" class="form-control" name="nombre">
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-sm-4 col-md-3 control-label">Correo</label>
+        <div class="col-sm-8 col-md-9">
+            <input id="correo" class="form-control" name="correo" type="email">
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-sm-4 col-md-3 control-label espacio">Teléfono</label>
+        <div class="col-sm-8 col-md-9">
+            <input id="telefono" class="form-control espacio" name="telefono" type="number">
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-sm-4 col-md-3 control-label espacio">Dirección</label>
+        <div class="col-sm-8 col-md-9">
+            <input id="direccion" class="form-control espacio" name="direccion">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <input class="botonesSubmit btn-block" type="submit" name="guardar" id="guardar" value="Guardar"/>
+        </div>
+    </div>
+</form>
 
-<div class="col-md-8 col-sm-8 espacio principal">
-            <form action="<?php echo $pagina == 'agregar_sticker' ?>" method="post" onsubmit="return confirmar()" id="validar">
-               
-                <label class="col-sm-4 col-md-3 control-label espacio">Rut(*)</label>
-                 
-                <div class="col-sm-8 col-md-9">
-                <input id="rut" class="form-control espacio" name="rut_mueblista" type="number"></div>
-                
-               
-                <label class="col-sm-4 col-md-3 control-label espacio">Nombre(*)</label>
-                  
-                <div class="col-sm-8 col-md-9">
-                <input id="nombre" class="form-control espacio" name="nombre"></div>
-                
-               
-                <label class="col-sm-4 col-md-3 control-label espacio">Correo</label>
-                  
-                <div class="col-sm-8 col-md-9">
-                <input id="correo" class="form-control espacio" name="correo" type="email"></div>
-                
-               
-                <label class="col-sm-4 col-md-3 control-label espacio">Telefono</label>
-                 
-                <div class="col-sm-8 col-md-9">
-                <input id="telefono" class="form-control espacio" name="telefono" type="number"></div>
-                
-               
-                <label class="col-sm-4 col-md-3 control-label espacio">Direccion</label>
-                 
-                <div class="col-sm-8 col-md-9">
-                <input id="direccion" class="form-control espacio" name="direccion"></div>
-                
-                <div class="col-sm-12 col-md-12">
-                <input class="btn btn-primary btn-lg btn-block espacio" type="submit" name="guardar" id="guardar" value="Guardar"/></div>
-               
-            </form>
-</div>
          <?php
             if(isset($_POST['guardar'])){
 

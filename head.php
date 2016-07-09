@@ -7,7 +7,7 @@
 <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="./estiloIndex.css">
 <link rel="stylesheet" href="./estiloNav.css">
-<link rel="stylesheet" href="paginas/estiloLeerQR.css">
+<link rel="stylesheet" href="./estiloContenido.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">   

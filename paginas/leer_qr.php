@@ -4,7 +4,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="paginas/estiloLeerQR.css">
         <script> // QRCODE reader Copyright 2011 Lazar Laszlo
 // http://www.webqr.com
 
@@ -163,25 +162,25 @@ function setwebcam()
         <script type="text/javascript" src="paginas/llqrcode.js"></script>
         <script src="paginas/jquery-1.12.3.js"></script>
     </head>
-    <body>
-            <div class="col-md-8 col-sm-8 espacio principal">
-                <div style="display:none" id="result"></div>
-	            <div class="selector" id="webcamimg" onclick="setwebcam()" align="left" ></div>
-                <div class="selector" id="qrimg" onclick="setimg()" align="right" ></div>
-                <center id="mainbody"><div id="outdiv"></div></center>
-                <canvas id="qr-canvas" width="200" height="200"></canvas>
-                <script type="text/javascript">load();</script>
-                
-                <form class="form-horizontal" method="post" action="mostrar_mueblista.php">
-                <div class="col-sm-12 col-md-6">
+<div class="formulario">
+    <div style="display:none" id="result"></div>
+    <div class="selector" id="webcamimg" onclick="setwebcam()" align="left" ></div>
+    <div class="selector" id="qrimg" onclick="setimg()" align="right" ></div>
+    <center id="mainbody"><div id="outdiv"></div></center>
+    <canvas id="qr-canvas" width="200" height="200"></canvas>
+    <script type="text/javascript">load();</script>
+    <form method="post" action="mostrar_mueblista.php">
+        <div class="row">
+            <label class="col-sm-4 col-md-3 control-label">Código leído</label>
+            <div class="col-sm-8 col-md-9">
                 <input id="codigo" type="text" name="txtCodigo" class="form-control espacio">
-                </div>
-                <div class="col-sm-12 col-md-6">
-                <input class="btn btn-primary btn-block espacio" type="submit" value="Consultar" name="consulta">
-                </br>
-                </div>
-                </form>
             </div>
-        
-    </body>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <input class="botonesSubmit btn-block" type="submit" value="Consultar" name="consulta">
+            </div>
+        </div>
+    </form>
+</div>
 </html>

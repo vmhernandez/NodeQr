@@ -1,5 +1,5 @@
 <?php
-  require_once 'header.php';
+  require_once 'head.php';
   include "funciones.php";  
 ?>
 <div class="col-md-8 col-sm-8 espacio principal">
