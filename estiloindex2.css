@@ -1,0 +1,157 @@
+
+
+
+/*SLIDE-------------------------------------------------------*/
+.letra {
+    font-family: 'Poiret One';
+}
+.img1{
+    z-index: 0;
+    background: url(
+    img/leerqr.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;    
+
+}
+
+.img2{
+    z-index: 0;
+    background: url(
+    img/mueblistatrabajando.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.slide {
+    color: white;
+    height: 300px;
+    text-align: center;
+    margin-top: 0;
+}
+.slide h1{
+    font-weight: bold;
+}
+
+.iContenido{
+    background: rgba(0,0,0,0.7);
+    color: white;
+    box-shadow:0 0 5px 5px rgba(0,0,0,0.7);
+}
+
+
+.iContenido2 {
+    background: rgba(0,0,0,0.5);
+    color: white;
+}
+/*FORMULARIO*/
+    /* --- CONTENIDO TAMAÑO 6 COLUMNAS ---*/
+.iContenido3 {
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    margin-top: 30px;
+
+}
+    /* --- FORMATO DE IMAGEN --- */
+.persona {
+    text-align: center;
+    padding: 10px;
+}
+
+    /* --- FORMATO DE CASILLAS DE TEXTO --- */
+.casillas {
+    margin: 0 auto; 
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.casillas input {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 5px;
+}
+.texto {
+    text-align: center;
+    font-size: 15px;
+}
+.texto a {
+    text-decoration: none;
+    color: white;
+}
+.texto a:hover {
+    font-weight: bold;
+}
+label.error {
+    color:  white;
+    font-weight: bold;
+    font-size: 18px;
+}
+.presione{
+    font-weight: bold;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.presione:hover{
+    font-weight: bold;
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    border: 3px solid#fff;
+}
+
+.presionar{
+    font-weight: bold;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.presionar:hover{
+    font-weight: bold;
+    color:black;
+    padding: 5px;
+    text-decoration: none;
+    background: white;
+}
+
+video{
+    width: 100%;
+    position: relative;
+    z-index: -100;
+}
+
+.paravideo{      
+z-index:100; 
+position:relative;
+top:-120px;
+background: rgba(0,0,0,0.7);
+}
+.paravideo h1,
+.paravideo h3{
+    color:white;
+    padding: 2%;
+}
+
+@media (max-width: 768px){
+    .slide h1 {
+        font-size: 20px;
+            }
+    .iContenido2 h1 {
+        font-size: 20px;
+    }
+    .paravideo h1{
+        font-size: 1.5em;
+    }
+    .paravideo h3{
+        font-size: 1.1em;
+    }
+}
