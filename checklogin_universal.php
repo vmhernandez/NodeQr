@@ -1,5 +1,5 @@
 <?php
-require_once 'header.php';
+require_once 'head.php';
 session_start();
 ?>
   <!DOCTYPE html>
@@ -26,10 +26,6 @@ session_start();
 <style>
 html {
   height: 100%;
-}
-
-body {
-  background-image: radial-gradient(circle farthest-corner at center, #3C4B57 0%, #1C262B 100%);
 }
 
 .loader {

@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cuerpo {
+
+    background-image: radial-gradient(circle farthest-corner at center, #3C4B57 0%, #1C262B 100%);
+    overflow: hidden;
+}
+
+/*HEADER*/
+.barra {
+     background: rgb(50,69,84);
+}
+.contLetra {
+    float: right;
+}
+
+.contLetra a{
+    text-decoration: none;
+    font-size: 60px;
+    font-family: 'Poiret One';
+    text-align: center;
+    color: #17964F;
+}
+.letra:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+#menu:hover {
+    cursor:pointer;
+}

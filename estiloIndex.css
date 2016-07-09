@@ -1,0 +1,83 @@
+
+
+
+/*SLIDE-------------------------------------------------------*/
+.letra {
+    font-family: 'Poiret One';
+}
+.slide {
+    color: white;
+    height: 300px;
+    background: rgba(234,84,85,1,0.1); 
+    text-align: center;
+}
+.slide h1{
+    font-weight: bold;
+}
+/*SLIDE*/
+/*CONTENIDO 2*/
+.iContenido2 {
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    margin-top: 30px;
+    color: white;
+}
+/*FORMULARIO*/
+    /* --- CONTENIDO TAMAÑO 6 COLUMNAS ---*/
+.iContenido3 {
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    margin-top: 30px;
+
+}
+    /* --- FORMATO DE IMAGEN --- */
+.persona {
+    text-align: center;
+    padding: 10px;
+}
+
+    /* --- FORMATO DE CASILLAS DE TEXTO --- */
+.casillas {
+    margin: 0 auto;
+    background: rgba(0,0,0,0.5); 
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.casillas input {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 5px;
+}
+.texto {
+    text-align: center;
+    font-size: 15px;
+}
+.texto a {
+    text-decoration: none;
+    color: white;
+}
+.texto a:hover {
+    font-weight: bold;
+}
+label.error {
+    color:  white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+}
+
+@media (max-width: 768px) {
+    .slide h1 {
+        font-size: 20px;
+            }
+    .iContenido2 h1 {
+        font-size: 20px;
+    }    
+}

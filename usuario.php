@@ -29,7 +29,7 @@ session_start();
     $pagina = isset($_GET['p']) ? strtolower($_GET['p']) : 'mis_muebles';
 
     // El fragmento de html que contiene la cabecera de nuestra web
-    require_once 'header.php';
+    require_once 'head.php';
     require_once 'menulateral_usuario.php';
 
 
