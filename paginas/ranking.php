@@ -1,5 +1,5 @@
 <?php
-  require_once 'header.php';
+  require_once 'head.php';
   include "paginas/funciones.php";  
 ?>
   <div class="contenedor">

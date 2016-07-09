@@ -21,16 +21,26 @@
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
-                        <div class="slide">
-                        <h1>¿Quieres saber quien hizo un mueble ?.</h1>
-                        <h3><a href="consultarqr.php">¡¡ Presiona Aquí !! </a></h3>
-                        </div>
+                          <div class="slide img1">
+                           <br>
+                            <div class="col-md-6 col-md-offset-3 iContenido">
+                             <h1>¿Quieres saber quién hizo tu mueble?</h1>
+                             <h3><a class="presione" href="consultarqr.php">¡¡ Presiona Aquí !! </a></h3>
+                             <br>
+                             </div>
+                           </div>
                         </div>
                         <div class="item">
-                        <div class="slide">
-                        <h1>Conoce nuestros mejores mueblistas.</h1>
-                        <h3><a href="ranking_mueblistas.php">¡¡ Presiona Aquí !! </a></h3>
-                        </div>
+                           <div class="slide img2">
+                           <br>
+                           <div class="col-md-6 col-md-offset-3 iContenido">
+                           <h1>¡Te invitamos a conocer a nuestros mejores mueblistas!</h1>
+                           <h3 ><a class="presione" href="ranking_mueblistas.php">¡¡ Presiona Aquí !! </a></h3>
+                           <br>
+                           </div>      
+                           </div>
+                           
+                           
                         </div>
                     </div>
                     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -46,12 +56,9 @@
             </div>
             <div class="row">
                 <div class="container">
-                    <div class="iContenido2 col-xs-12 col-sm-6">
-                       <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis repudiandae iusto deserunt debitis enim pariatur, voluptatibus mollitia rerum beatae, modi quibusdam recusandae eveniet iure molestiae. Voluptatum nulla, ab deleniti expedita.</h1>
-                    </div>
-                    <div class="iContenido3 col-xs-12 col-sm-6">
+                    <div class="col-xs-12 col-sm-6 iContenido2">
                         <div id="iconoPersona" class="persona">
-                            <img src="img/perfilUser.png">
+                           <h1>Login</h1>
                         </div>
                         <div class="casillas">
                             <form method="post" action="checklogin_universal.php" id="formAdmin">
@@ -62,12 +69,12 @@
                                     <input type="password" name="contrasena" placeholder="&#128273; Password" id="contrasena"/>
                                 </div>
                                 <div class="col-md-12 col-sm-12">
-                                    <input type="submit" name="iniciar" value="Iniciar sesión"/>
+                                    <input type="submit" name="iniciar" value="Iniciar sesión" class="presionar"/>
                                 </div>
                             </form>
                             <div class ="texto col-md-12 col-sm-12">
-                                <a href="registrar_usuario.php">Crear cuenta</a><br> 
-                                <a href="mail.php">¿Olvidaste tu contraseña?</a>
+                                <a class="presione" href="registrar_usuario.php">Crear cuenta</a><br> 
+                                <a class="presione" href="mail.php">¿Olvidaste tu contraseña?</a>
                             </div>
                             <?php
                                 if(isset($_POST['iniciar'])){
@@ -81,7 +88,13 @@
                             ?>
                         </div>
                     </div>
-                </div>
+                    <div class="col-xs-12 col-sm-6 iContenido2">
+                     <video autoplay loop>
+    <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm">
+<source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
+</video>
+                    </div>
+                </div>   
             </div>
         </div>
         <script src="js/jquery.js"></script>

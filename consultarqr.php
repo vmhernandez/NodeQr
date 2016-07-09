@@ -1,6 +1,6 @@
 <?php
     include "paginas/funciones.php";
-    require_once 'header.php';
+    require_once 'head.php';
 ?>
 <!DOCTYPE html>
 <html>

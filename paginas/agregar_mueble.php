@@ -1,6 +1,6 @@
 <?php
     include "paginas/funciones.php";
-    require_once 'header.php';
+    require_once 'head.php';
 ?>
         <script> // QRCODE reader Copyright 2011 Lazar Laszlo
 // http://www.webqr.com
