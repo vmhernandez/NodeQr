@@ -12,7 +12,7 @@ body{
 .cont0 {
     background-color: rgba(34,40,49,0.5);
     font-family: 'Montserrat';
-    color: white;
+    color: red;
     text-align: center;
     box-shadow: 1px 1px 1px 1px black;
 }
